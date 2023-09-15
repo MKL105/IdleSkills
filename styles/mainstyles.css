@@ -1,0 +1,15 @@
+body {
+    background-color: #1a1a1a;
+    color: white;
+}
+.header {
+    text-align: center;
+}
+.navbar {
+    text-align: center;
+}
+.navbar-inner {
+    display:inline-block;
+    text-align: left;
+    margin: 20px;
+}
