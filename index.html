@@ -15,7 +15,7 @@
                 v0.0.0 <a href="changelog.html" target="_blank">changelog</a>
             </div>  
             <div class="navbar-inner">
-                Settings
+                <button type="button" class="textbutton" onclick="openSettings()">Settings</button>
             </div>
             <div class="navbar-inner">
                 Achievements
@@ -24,5 +24,48 @@
                 Stats
             </div>
         </div>
+        <hr class="solid"/>
+        <div id="game-view">
+            <div class="sideheader">
+                <div class="sideheader-inner">
+                    <h1>Inventory</h1>
+                </div>
+                <div class="sideheader-inner">
+                    <button id="toggle-inventory-button" onclick="toggleInv()">show</button>
+                </div>
+            </div>
+            <div id="inventory-body">
+                <p>test</p>
+            </div>
+            <hr class="solid"/>
+            <div class="skills-tab">
+                <button class="skills-tablinks" onclick="openSkill(event, 'Mining')", id="default-open">Mining</button>
+                <button class="skills-tablinks" onclick="openSkill(event, 'Woodcutting')">Woodcutting</button>
+                <button class="skills-tablinks" onclick="openSkill(event, 'Fishing')">Fishing</button>
+            </div>
+            <div id="Mining", class="skills-tabcontent">
+                <h3>Mining</h3>
+                <p>This is the mining skill tab.</p>
+            </div>
+            <div id="Woodcutting", class="skills-tabcontent">
+                <h3>Woodcutting</h3>
+                <p>This is the woodcutting skill tab.</p>
+            </div>
+            <div id="Fishing", class="skills-tabcontent">
+                <h3>Fishing</h3>
+                <p>This is the fishing skill tab.</p>
+            </div>
+        </div>
+        <div id="settings-view">
+            <span class="topright"><button type="button" class="textbutton topright" onclick="closeSettings()">&times</button></span>
+            <p>Settings</p>
+        </div>
+        <div id="achievements-view">
+            //TODO
+        </div>
+        <div id="stats-view">
+            //TODO
+        </div>
+        <script type="text/javascript" src="/scripts/ui.js"></script>
     </body>
 </html>

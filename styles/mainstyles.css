@@ -5,6 +5,9 @@ body {
 .header {
     text-align: center;
 }
+.sideheader {
+    text-align: left;
+}
 .navbar {
     text-align: center;
 }
@@ -12,4 +15,52 @@ body {
     display:inline-block;
     text-align: left;
     margin: 20px;
+}
+.sideheader-inner {
+    display:inline-block;
+    text-align: left;
+    margin: 5px;
+}
+hr.solid {
+    border-top: 3px solid #bbb;
+}
+.textbutton {
+    background:none;
+    border:none;
+    margin:0;
+    padding:0;
+    cursor: pointer;
+    color: white;
+}
+.topright {
+    color: white;
+    float: right;
+    font-size: 50px;
+    margin-right: 50px;
+}
+.skills-tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+.skills-tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+.skills-tab button:hover {
+    background-color: #dddddd;
+}
+.skills-tab button.active {
+    background-color: #ccc;
+}
+.skills-tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
 }
