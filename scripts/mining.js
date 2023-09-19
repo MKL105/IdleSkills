@@ -1,7 +1,6 @@
-const miningT1B1 = {
-    active: false,
+const miningT1 = {
+    category: 'mining',
     baseTime: 10,
-    timeLeft: 10,
     dropChanceCommon: 100,
     baseDropsCommon: 1,
     bonusChanceCommon: 0,
@@ -79,10 +78,10 @@ const miningT1B1 = {
     }
 }
 
-const miningButtons = [[miningT1B1, undefined, undefined, undefined, undefined], [undefined, undefined, undefined, undefined, undefined]];
+const miningButtons = [miningT1];
 
 function startMining(tier, button) {
-    var id = 'progress-bar-t' + tier + 'b' + button;
-    var elem = miningButtons[tier - 1][button - 1];
+    var id = 't' + tier + 'b' + button;
+    var elem = miningButtons[tier - 1];
     startProgress(id, elem);
 }

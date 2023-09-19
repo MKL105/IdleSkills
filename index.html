@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 		<title>Idle Skills</title>
         <link rel="stylesheet" type="text/css" href="styles/mainstyles.css"/>
+        <link rel="icon" href="images/Stone.png">
     </head>
     <body>
         <div class="header">
@@ -36,7 +37,11 @@
                     </div>
                 </div>
                 <div id="inventory-body">
-                    <p>test</p>
+                    <div class="inventory-tab" id="inventory-mining">
+                        <div class="inventory-item" id="inv-pebble">
+                            Pebble: 0/10
+                        </div>
+                    </div>
                 </div>
                 <hr class="solid"/>
                 <div class="skills-tab">
@@ -46,7 +51,7 @@
                 </div>
                 <div id="Mining", class="skills-tabcontent">
                     <div class="skills-button-container">
-                        <button id="miningT1B1", class="skill-button", onclick="startMining(1, 1)"><img src="images/Stone.png"></button>
+                        <button id="mining-t1b1", class="skill-button", onclick="startMining(1, 1)"><img src="images/Stone.png"></button>
                         <div class="progress-bar" id="progress-bar-t1b1">
                             <div class="bar">
                                 10s
@@ -79,6 +84,7 @@
         <div id="stats-view">
             //TODO
         </div>
+        <script type="text/javascript" src="scripts/inventory.js"></script>
         <script type="text/javascript" src="scripts/ui.js"></script>
         <script type="text/javascript" src="scripts/main.js"></script>
         <script type="text/javascript" src="scripts/mining.js"></script>

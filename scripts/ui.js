@@ -8,6 +8,8 @@ const statsView = document.getElementById('stats-view');
 const toggleInvButton = document.getElementById('toggle-inventory-button');
 const invBody = document.getElementById('inventory-body');
 
+const invPebble = document.getElementById('inv-pebble');
+
 //Initializes the UI once the window is fully loaded.
 window.onload = setupUI();
 function setupUI() {
@@ -19,6 +21,8 @@ function setupUI() {
     //Set up inventory
     invBody.style.display = 'block';
     toggleInvButton.textContent = 'hide';
+    invPebble.style.display = 'block';
+    invPebble.innerHTML = 'Pebble: ' + miningInvT1.pebble + '/' + miningInvT1.pebblemax;
     //Set up skills tabs
     document.getElementById("default-open").click();
 }
@@ -66,22 +70,33 @@ function openSkill(event, skillName) {
 }
 
 function startProgress(id, obj) {
-    var element = document.getElementById(id);
+    var progressBar = document.getElementById('progress-bar-' + id);
+    var button = document.getElementById(obj.category + '-' + id);
+    console.log(button);
     var baseTime = obj.baseTime;
-    element.firstElementChild.innerHTML = baseTime + 's';
-    progress(baseTime, baseTime, element, obj);
+    progressBar.firstElementChild.innerHTML = baseTime + 's';
+    button.disabled = true;
+    progress(baseTime, baseTime, progressBar, obj, id);
 }
 
-function progress(timeLeft, timeTotal, element, obj) {
-    var progressBarWidth = timeLeft * element.clientWidth / timeTotal;
-    element.firstElementChild.style.width = progressBarWidth + 'px';
-    element.firstElementChild.innerHTML = timeLeft + 's';
+function progress(timeLeft, timeTotal, progressBar, obj, id) {
+    var progressBarWidth = timeLeft * progressBar.clientWidth / timeTotal;
+    progressBar.firstElementChild.style.width = progressBarWidth + 'px';
+    progressBar.firstElementChild.innerHTML = timeLeft + 's';
     if (timeLeft > 0) {
         setTimeout(function() {
-            progress(timeLeft - 1, timeTotal, element, obj);
+            progress(timeLeft - 1, timeTotal, progressBar, obj, id);
         }, 1000);
     }
     else {
-        console.log(obj.getDrop());
+        storeDrop(obj.getDrop());
+        progressBar.firstElementChild.style.width = progressBar.clientWidth + 'px';
+        progressBar.firstElementChild.innerHTML = obj.baseTime + 's';
+        var button = document.getElementById(obj.category + '-' + id);
+        button.disabled = false;
     }
+}
+
+function updateInventoryUi() {
+    invPebble.innerHTML = 'Pebble: ' + miningInvT1.pebble + '/' + miningInvT1.pebblemax;
 }
