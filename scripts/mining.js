@@ -79,8 +79,10 @@ const miningT1B1 = {
     }
 }
 
-const miningButtons = [[miningT1B1]];
+const miningButtons = [[miningT1B1, undefined, undefined, undefined, undefined], [undefined, undefined, undefined, undefined, undefined]];
 
 function startMining(tier, button) {
-    
+    var id = 'progress-bar-t' + tier + 'b' + button;
+    var elem = miningButtons[tier - 1][button - 1];
+    startProgress(id, elem);
 }

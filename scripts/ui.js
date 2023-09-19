@@ -64,3 +64,24 @@ function openSkill(event, skillName) {
     document.getElementById(skillName).style.display = "block";
     event.currentTarget.className += " active";
 }
+
+function startProgress(id, obj) {
+    var element = document.getElementById(id);
+    var baseTime = obj.baseTime;
+    element.firstElementChild.innerHTML = baseTime + 's';
+    progress(baseTime, baseTime, element, obj);
+}
+
+function progress(timeLeft, timeTotal, element, obj) {
+    var progressBarWidth = timeLeft * element.clientWidth / timeTotal;
+    element.firstElementChild.style.width = progressBarWidth + 'px';
+    element.firstElementChild.innerHTML = timeLeft + 's';
+    if (timeLeft > 0) {
+        setTimeout(function() {
+            progress(timeLeft - 1, timeTotal, element, obj);
+        }, 1000);
+    }
+    else {
+        console.log(obj.getDrop());
+    }
+}
