@@ -1,25 +1,29 @@
-const miningInvT1 = {
-    drops: ['Pebble'],
-    pebble: 0,
-    pebblemax: 10,
-    addItem: function (item) {
-        switch (item.drop) {
-            case 'Pebble':
-                var newAmount = (this.pebble + item.amount > this.pebblemax) ? this.pebblemax : this.pebble + item.amount;
-                this.pebble = newAmount;
-                return;
-            default: return;
-        }
-    }
+function getItemById(id) {
+    return inventory.find(item => item.id === id);
 }
 
-const inventories = [miningInvT1];
+function addItem(id, amount) {
+    var target = {};
 
-function storeDrop(drop) {
-    for (let i = 0; i < inventories.length; i++) {
-        if (inventories[i].drops.includes(drop.drop)) {
-            inventories[i].addItem(drop);
-            updateInventoryUi();
-        }
+    target = inventory.find(item => item.id === id);
+    if (target === undefined) {
+        return false;
     }
+    (target.amount + amount >= target.maxAmount) ? target.amount = target.maxAmount : target.amount += amount;
+    updateInventoryText(id);
+    return true;
+}
+
+function removeItem(id, amount) {
+    var target = {};
+
+    target = inventory.find(item => item.id === id);
+    if (target === undefined) {
+        return false;
+    }
+    if (target.amount - amount < 0) {
+        return false;
+    }
+    target.amount -= amount;
+    return true;
 }

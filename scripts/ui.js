@@ -18,13 +18,23 @@ function setupUI() {
     settingsView.style.display = 'none';
     achievementsView.style.display = 'none';
     statsView.style.display = 'none';
+
     //Set up inventory
     invBody.style.display = 'block';
     toggleInvButton.textContent = 'hide';
     invPebble.style.display = 'block';
-    invPebble.innerHTML = 'Pebble: ' + miningInvT1.pebble + '/' + miningInvT1.pebblemax;
+
     //Set up skills tabs
     document.getElementById("default-open").click();
+
+        for (buttonState of buttonStates) {
+            //----------------------------------------------------------------
+            //Only use this part when not loading data from a save!
+            buttonState.timeLeft = miningData.find(data => data.tier == buttonState.tier).baseTime;
+            //-----------------------------------------------------------------
+
+            updateSkillButton(buttonState.id);
+        }
 }
 
 //Displays and hides the inventory if the according button is clicked.
@@ -72,7 +82,6 @@ function openSkill(event, skillName) {
 function startProgress(id, obj) {
     var progressBar = document.getElementById('progress-bar-' + id);
     var button = document.getElementById(obj.category + '-' + id);
-    console.log(button);
     var baseTime = obj.baseTime;
     progressBar.firstElementChild.innerHTML = baseTime + 's';
     button.disabled = true;
@@ -97,6 +106,21 @@ function progress(timeLeft, timeTotal, progressBar, obj, id) {
     }
 }
 
-function updateInventoryUi() {
-    invPebble.innerHTML = 'Pebble: ' + miningInvT1.pebble + '/' + miningInvT1.pebblemax;
+function updateSkillButton(id) {
+    var progressBar = document.getElementById('progress-bar-' + id);
+    var button = document.getElementById('button-' + id);
+    var tier = id[id.length - 3];
+    var data = miningData.find(obj => obj.tier == tier);
+    var stateData = buttonStates.find(obj => obj.id == id);
+    var progressBarWidth = stateData.timeLeft * progressBar.clientWidth / data.baseTime;
+    progressBar.firstElementChild.style.width = progressBarWidth + 'px';
+    progressBar.firstElementChild.innerHTML = stateData.timeLeft + 's';
+    button.disabled = stateData.active;
+}
+
+function updateInventoryText(id) {
+    var dataObject = inventory.find(obj => obj.id == id);
+    var text = dataObject.name + ': ' + dataObject.amount + '/' + dataObject.maxAmount;
+    var textElement = document.getElementById('inv-' + id);
+    textElement.innerHTML = text;
 }

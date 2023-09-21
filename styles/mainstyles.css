@@ -83,6 +83,7 @@ hr.solid {
     border: 1px solid #ccc;
     border-top: none;
 }
+
 .split {
     height: 100%;
     z-index: 1;
@@ -118,6 +119,9 @@ hr.solid {
 }
 .skills-button-container {
     width: 100px;
+    display:inline-block;
+    text-align: left;
+    margin: 20px;
 }
 .skills-button-container p{
     text-align: center;
@@ -152,4 +156,26 @@ hr.solid {
     align-items: flex-start;
     text-align: center;
     line-height: 1;
+}
+.tooltip {
+    position: relative;
+}
+.tooltip .tooltip-text {
+    visibility: hidden;
+    background-color: #1a1a1a;
+    color: white;
+    border: 1px solid #ccc;
+    text-align: center;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    width: 98px;
+    bottom: 90%;
+    left: 70%;
+    margin-left: -50px;
+    border-radius: 10px;
+}
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+    transition-delay: 1s;
 }

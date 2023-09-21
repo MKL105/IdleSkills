@@ -1,87 +1,60 @@
-const miningT1 = {
-    category: 'mining',
-    baseTime: 10,
-    dropChanceCommon: 100,
-    baseDropsCommon: 1,
-    bonusChanceCommon: 0,
-    bonusDropsCommon: 1,
-    dropCommon: 'Pebble',
-    dropChanceUncommon: 0,
-    baseDropsUncommon: 1,
-    bonusChanceUncommon: 0,
-    bonusDropsUncommon: 1,
-    dropUncommon: '',
-    dropChanceRare: 0,
-    baseDropsRare: 1,
-    bonusChanceRare: 0,
-    bonusDropsRare: 1,
-    dropRare: '',
-    dropChanceEpic: 0,
-    baseDropsEpic: 1,
-    bonusChanceEpic: 0,
-    bonusDropsEpic: 1,
-    dropEpic: '',
-    dropChanceLegendary: 0,
-    baseDropsLegendary: 1,
-    bonusChanceLegendary: 0,
-    bonusDropsLegendary: 1,
-    dropLegendary: '',
-    getDrop: function() {
-        let total = 0;
-        let roll = 0;
-        let bonusRoll = 0;
-        let dropAmount = 0;
-        total = this.dropChanceCommon + this.dropChanceUncommon + this.dropChanceRare + this.dropChanceEpic + this.dropChanceLegendary;
-        roll = Math.floor(Math.random() * total) + 1;
-        if (roll <= this.dropChanceCommon) {
-            bonusRoll = Math.floor(Math.random() * 100) + 1;
-            if (bonusRoll <= this.bonusChanceCommon) {
-                dropAmount = this.baseDropsCommon + this.bonusDropsCommon;
-            } else {
-                dropAmount = this.baseDropsCommon;
+function startMining(buttonId) {
+    buttonStates.find(button => button.id === buttonId).active = true;
+    mineProgress(buttonId);
+}
+
+function mineProgress(buttonId) {
+    var buttonState = buttonStates.find(button => button.id === buttonId);
+    var tier = buttonId[buttonId.length - 3];
+    if (buttonState.timeLeft > 0) {
+        buttonState.timeLeft--;
+        updateSkillButton(buttonId);
+        setTimeout(function() {
+            mineProgress(buttonId);
+        }, 1000);
+    }
+    else {
+        buttonState.active = false;
+        buttonState.timeLeft = miningData.find(data => data.tier == tier).baseTime;
+        updateSkillButton(buttonId);
+        calculateDrops(buttonId);
+    }
+}
+
+function calculateDrops(buttonId) {
+    var total = 0;
+    var tier = buttonId[buttonId.length - 3];
+    var dropData = miningData.find(data => data.tier == tier);
+
+    for (drop of dropData.drops) {
+        total += drop.dropChance;
+    }
+
+    var roll = Math.floor(Math.random() * total) + 1;
+    var bonusRoll = Math.floor(Math.random() * 100) + 1;
+    var sum = 0;
+
+    for (let i = 0; i < dropData.drops.length; i++) {
+        sum += dropData.drops[i].dropChance;
+        if (roll <= sum) {
+            var amount = 0;
+            if (bonusRoll <= dropData.drops[i].bonusDropChance) {
+                amount = dropData.drops[i].baseDrop + dropData.drops[i].bonusDrop;
             }
-            return {drop: this.dropCommon, amount: dropAmount}
-        } else if (roll <= this.dropChanceCommon + this.dropChanceUncommon) {
-            bonusRoll = Math.floor(Math.random() * 100) + 1;
-            if (bonusRoll <= this.bonusChanceUncommon) {
-                dropAmount = this.baseDropsUncommon + this.bonusDropsUncommon;
-            } else {
-                dropAmount = this.baseDropsUncommon;
+            else {
+                amount = dropData.drops[i].baseDrop;
             }
-            return {drop: this.dropUncommon, amount: dropAmount}
-        } else if (roll <= this.dropChanceCommon + this.dropChanceUncommon + this.dropChanceRare) {
-            bonusRoll = Math.floor(Math.random() * 100) + 1;
-            if (bonusRoll <= this.bonusChanceRare) {
-                dropAmount = this.baseDropsRare + this.bonusDropsRare;
-            } else {
-                dropAmount = this.baseDropsRare;
-            }
-            return {drop: this.dropRare, amount: dropAmount}
-        } else if (roll <= this.dropChanceCommon + this.dropChanceUncommon + this.dropChanceRare + this.dropChanceEpic) {
-            bonusRoll = Math.floor(Math.random() * 100) + 1;
-            if (bonusRoll <= this.bonusChanceEpic) {
-                dropAmount = this.baseDropsEpic + this.bonusDropsEpic;
-            } else {
-                dropAmount = this.baseDropsEpic;
-            }
-            return {drop: this.dropEpic, amount: dropAmount}
-        }
-        else {
-            bonusRoll = Math.floor(Math.random() * 100) + 1;
-            if (bonusRoll <= this.bonusChanceLegendary) {
-                dropAmount = this.baseDropsLegendary + this.bonusDropsLegendary;
-            } else {
-                dropAmount = this.baseDropsLegendary;
-            }
-            return {drop: this.dropLegendary, amount: dropAmount}
+            finishMining(dropData.drops[i].item, amount);
+            break;
         }
     }
 }
 
-const miningButtons = [miningT1];
-
-function startMining(tier, button) {
-    var id = 't' + tier + 'b' + button;
-    var elem = miningButtons[tier - 1];
-    startProgress(id, elem);
+function finishMining(item, amount) {
+    if (addItem(item.id, amount)) {
+        return;
+    }
+    else {
+        console.warn('Could not add'+ item.name +'to inventory.');
+    }
 }
