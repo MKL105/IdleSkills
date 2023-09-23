@@ -27,14 +27,18 @@ function setupUI() {
     //Set up skills tabs
     document.getElementById("default-open").click();
 
-        for (buttonState of buttonStates) {
+    for (buttonState of buttonStates) {
+        if (buttonState.unlocked == true) {
             //----------------------------------------------------------------
-            //Only use this part when not loading data from a save!
-            buttonState.timeLeft = miningData.find(data => data.tier == buttonState.tier).baseTime;
-            //-----------------------------------------------------------------
+        //Only use this part when not loading data from a save!
+        buttonState.timeLeft = miningData.find(data => data.tier == buttonState.tier).baseTime;
+        //-----------------------------------------------------------------
 
-            updateSkillButton(buttonState.id);
+        updateSkillButton(buttonState.id);
         }
+    }
+
+    updateUpgradeButtons();
 }
 
 //Displays and hides the inventory if the according button is clicked.
@@ -123,4 +127,44 @@ function updateInventoryText(id) {
     var text = dataObject.name + ': ' + dataObject.amount + '/' + dataObject.maxAmount;
     var textElement = document.getElementById('inv-' + id);
     textElement.innerHTML = text;
+}
+
+function updateUpgradeButtons() {
+    const elements = document.getElementsByClassName("upgrade");
+    while(elements.length > 0){
+        elements[0].parentNode.removeChild(elements[0]);
+    }
+
+    updateUpgradeData();
+
+    for (upgrade of upgradeData) {
+        if (upgrade.available == true) {
+            createUpgradeButton(upgrade);
+        }
+    }
+}
+
+function createUpgradeButton(upgrade) {
+    const div = document.createElement('div');
+    div.className = 'upgrade tooltip';
+
+    const tooltip = document.createElement('span');
+    tooltip.className = 'tooltip-text';
+    var tooltipText = 'Cost: ';
+    for (req of upgrade.requirements) {
+        tooltipText += '<br />' + req.item.name + ': '+ getItemById(req.item.id).amount  + '/' + req.amount;
+    }
+    tooltip.innerHTML = tooltipText;
+
+    const button = document.createElement('button');
+    button.className = 'upgrade-button';
+    button.id = upgrade.id;
+    button.innerHTML = upgrade.title;
+    button.disabled = !upgrade.unlockable;
+    button.addEventListener("click", buyUpgrade, false);
+
+    const parent = document.getElementById('upgrades-list');
+    div.appendChild(tooltip);
+    div.appendChild(button);
+    parent.appendChild(div);
 }

@@ -145,22 +145,26 @@ hr.solid {
 .upgrades-list {
     padding-top: 10px;
 }
+.upgrade {
+    display:inline-block;
+    text-align: left;
+    margin: 5px;
+}
 .upgrade-button {
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     border: 3px solid #ccc;
     background-color: #2c2c2c;
     color: white;
-    display: flex;
     justify-content: center;
-    align-items: flex-start;
     text-align: center;
     line-height: 1;
+    border-radius: 5px;
 }
 .tooltip {
     position: relative;
 }
-.tooltip .tooltip-text {
+.tooltip .tooltip-text-delayed, .tooltip .tooltip-text {
     visibility: hidden;
     background-color: #1a1a1a;
     color: white;
@@ -169,13 +173,16 @@ hr.solid {
     padding: 5px 0;
     position: absolute;
     z-index: 1;
-    width: 98px;
+    width: 120px;
     bottom: 90%;
     left: 70%;
     margin-left: -50px;
     border-radius: 10px;
 }
-.tooltip:hover .tooltip-text {
+.tooltip:hover .tooltip-text-delayed {
     visibility: visible;
     transition-delay: 1s;
+}
+.tooltip:hover .tooltip-text {
+    visibility: visible;
 }

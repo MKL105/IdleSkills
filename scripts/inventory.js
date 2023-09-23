@@ -11,13 +11,12 @@ function addItem(id, amount) {
     }
     (target.amount + amount >= target.maxAmount) ? target.amount = target.maxAmount : target.amount += amount;
     updateInventoryText(id);
+    updateUpgradeButtons();
     return true;
 }
 
 function removeItem(id, amount) {
-    var target = {};
-
-    target = inventory.find(item => item.id === id);
+    var target = inventory.find(item => item.id == id);
     if (target === undefined) {
         return false;
     }
@@ -25,5 +24,7 @@ function removeItem(id, amount) {
         return false;
     }
     target.amount -= amount;
+    updateInventoryText(id);
+    updateUpgradeButtons();
     return true;
 }

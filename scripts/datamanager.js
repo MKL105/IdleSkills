@@ -13,7 +13,7 @@ const miningData = [
     {
         id: "miningDataT1",
         tier: 1,
-        baseTime: 7,
+        baseTime: 5,
         drops: [
             {
                 item: getItemById("pebble"),
@@ -27,7 +27,57 @@ const miningData = [
 ];
 
 const upgradeData = [
+    {
+        id: "pebbleInvUpgrade1",
+        category: "pebbleInvUpgrade",
+        title: "Pebble Inventory Upgrade 1",
+        upgradeNumber: 1,
+        available: true,
+        unlockable: false,
+        unlocksUpgrades: [
+            "pebbleInvUpgrade2"
+        ],
+        requirements: [
+            {
+                item: getItemById("pebble"),
+                amount: pebbleInvMaxProgression[0]
+            }
+        ]
+    },
+    {
+        id: "pebbleInvUpgrade2",
+        category: "pebbleInvUpgrade",
+        title: "Pebble Inventory Upgrade 2",
+        upgradeNumber: 2,
+        available: false,
+        unlockable: false,
+        unlocksUpgrades: [
+            "pebbleInvUpgrade3"
+        ],
+        requirements: [
+            {
+                item: getItemById("pebble"),
+                amount: pebbleInvMaxProgression[1]
+            }
+        ]
+    },
+    {
+        id: "pebbleInvUpgrade3",
+        category: "pebbleInvUpgrade",
+        title: "Pebble Inventory Upgrade 3",
+        upgradeNumber: 3,
+        available: false,
+        unlockable: false,
+        unlocksUpgrades: [
 
+        ],
+        requirements: [
+            {
+                item: getItemById("pebble"),
+                amount: pebbleInvMaxProgression[2]
+            }
+        ]
+    }
 ]
 
 const buttonStates = [
@@ -36,13 +86,15 @@ const buttonStates = [
         active: false,
         timeLeft: 0,
         category: "mining",
-        tier: 1
+        tier: 1,
+        unlocked: true
     },
     {
         id: "mining-t1b2",
         active: false,
         timeLeft: 0,
         category: "mining",
-        tier: 1
+        tier: 1,
+        unlocked: false
     }
 ]

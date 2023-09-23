@@ -51,18 +51,9 @@
                 </div>
                 <div id="Mining", class="skills-tabcontent">
                     <div class="skills-button-container tooltip">
-                        <span class="tooltip-text">Tooltip text</span>
+                        <span class="tooltip-text-delayed">Collect Pebbles. Drops: Pebble</span>
                         <button id="button-mining-t1b1", class="skill-button", onclick="startMining('mining-t1b1')"><img src="images/Stone.png"></button>
                         <div class="progress-bar" id="progress-bar-mining-t1b1">
-                            <div class="bar">
-                                10s
-                            </div>
-                        </div>
-                    </div>
-                    <div class="skills-button-container tooltip">
-                        <span class="tooltip-text">Tooltip text</span>
-                        <button id="button-mining-t1b2", class="skill-button", onclick="startMining('mining-t1b2')"><img src="images/Stone.png"></button>
-                        <div class="progress-bar" id="progress-bar-mining-t1b2">
                             <div class="bar">
                                 10s
                             </div>
@@ -80,8 +71,10 @@
                 <hr class="solid"/>
                 <div class="upgrade-container">
                     <h1>Upgrades</h1>
-                    <div class="upgrades-list">
-                        <button class="upgrade-button">upgrade1</button>
+                    <div class="upgrades-list" id="upgrades-list">
+                        <div class="upgrade">
+                            <button class="upgrade-button" onclick="buyUpgrade('pebbleInvUpgrade1')">Upgrade Pebble inventory space</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -103,6 +96,7 @@
         </div>
         <script type="text/javascript" src="scripts/mining.js"></script>
         <script type="text/javascript" src="scripts/inventory.js"></script>
+        <script type="text/javascript" src="scripts/upgrades.js"></script>
         <script type="text/javascript" src="scripts/datamanager.js"></script>
         <script type="text/javascript" src="scripts/ui.js"></script>
     </body>
