@@ -51,10 +51,8 @@ function calculateDrops(buttonId) {
 }
 
 function finishMining(item, amount) {
-    if (addItem(item.id, amount)) {
-        return;
-    }
-    else {
-        console.warn('Could not add'+ item.name +'to inventory.');
+    var success = addItem(item.id, amount);
+    if (success) {
+        logDrop(item, amount, 'mining');
     }
 }

@@ -6,9 +6,11 @@ function addItem(id, amount) {
     var target = {};
 
     target = inventory.find(item => item.id === id);
-    if (target === undefined) {
+
+    if (target.amount == target.maxAmount) {
         return false;
     }
+
     (target.amount + amount >= target.maxAmount) ? target.amount = target.maxAmount : target.amount += amount;
     updateInventoryText(id);
     updateUpgradeButtons();

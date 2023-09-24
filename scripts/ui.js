@@ -39,6 +39,7 @@ function setupUI() {
     }
 
     updateUpgradeButtons();
+    emptyLog();
 }
 
 //Displays and hides the inventory if the according button is clicked.
@@ -60,6 +61,19 @@ function openSettings() {
     settingsView.style.display = 'block';
 }
 function closeSettings() {
+    gameView.style.display = 'block';
+    achievementsView.style.display = 'none';
+    statsView.style.display = 'none';
+    settingsView.style.display = 'none';
+}
+
+function openAchievements() {
+    gameView.style.display = 'none';
+    achievementsView.style.display = 'block';
+    statsView.style.display = 'none';
+    settingsView.style.display = 'none';
+}
+function closeAchievements() {
     gameView.style.display = 'block';
     achievementsView.style.display = 'none';
     statsView.style.display = 'none';
@@ -167,4 +181,12 @@ function createUpgradeButton(upgrade) {
     div.appendChild(tooltip);
     div.appendChild(button);
     parent.appendChild(div);
+}
+
+function updateLog() {
+    const logContent = document.getElementById('log-content');
+    logContent.innerHTML = '';
+    for (logElem of logBuffer) {
+        logContent.innerHTML += logElem + '<br />';
+    }
 }

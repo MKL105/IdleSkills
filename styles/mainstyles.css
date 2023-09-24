@@ -101,9 +101,23 @@ hr.solid {
     width: 24%;
     float: right;
     border: 1px solid #ccc;
+    overflow: hidden;
+    padding-bottom: 10px;
 }
 .stats-tab {
     padding-left: 20px;
+    height: 55vh;
+    overflow-x: hidden;
+}
+.log-tab {
+    padding-left: 20px;
+    height: 20vh;
+    overflow: hidden;
+}
+.log-content {
+    height: 76%;
+    overflow-x: hidden;
+    padding-right: 7px;
 }
 .skill-button {
     width: 100px;
@@ -185,4 +199,16 @@ hr.solid {
 }
 .tooltip:hover .tooltip-text {
     visibility: visible;
+}
+.invisible-link {
+    color: white;
+    text-decoration: none;
+}
+
+.log-content p {
+    display: inline;
+}
+.common {
+    color: rgb(130, 130, 130);
+    display: inline-block;
 }

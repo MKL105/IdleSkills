@@ -19,10 +19,10 @@
                 <button type="button" class="textbutton" onclick="openSettings()">Settings</button>
             </div>
             <div class="navbar-inner">
-                Achievements
+                <button type="button" class="textbutton" onclick="openAchievements()">Achievements</button>
             </div>
             <div class="navbar-inner">
-                Stats
+                <a href="profile.html" target="_blank" class="invisible-link">Profile</a>
             </div>
         </div>
         <hr class="solid"/>
@@ -82,18 +82,27 @@
                 <div class="stats-tab">
                     <h1>Stats</h1>
                 </div>
+                <hr class="solid">
+                <div class="log-tab">
+                    <h1>Log</h1>
+                    <div class="log-content" id="log-content">
+                        <p>This is a text <div class="red">hopefully</div> without a line break</p>
+                    </div>
+                </div>
             </div>
         </div>
         <div id="settings-view">
             <span class="topright"><button type="button" class="textbutton topright" onclick="closeSettings()">&times</button></span>
-            <p>Settings</p>
+            <h1>Settings</h1>
         </div>
         <div id="achievements-view">
-            //TODO
+            <span class="topright"><button type="button" class="textbutton topright" onclick="closeAchievements()">&times</button></span>
+            <h1>Achievements</h1>
         </div>
         <div id="stats-view">
             //TODO
         </div>
+        <script type="text/javascript" src="scripts/log.js"></script>
         <script type="text/javascript" src="scripts/mining.js"></script>
         <script type="text/javascript" src="scripts/inventory.js"></script>
         <script type="text/javascript" src="scripts/upgrades.js"></script>
