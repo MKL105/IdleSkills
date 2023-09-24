@@ -213,6 +213,7 @@ function updateUpgradeButtonStates() {
             const button = document.getElementById(upgrade.id);
             button.className = button.className.replace(" not-unlockable", "");
             button.className = button.className.replace(" unlockable", "");
+            button.disabled = !upgrade.unlockable;
             if (upgrade.unlockable == true) {
                 button.className += " unlockable";
             }
