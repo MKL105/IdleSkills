@@ -167,18 +167,25 @@ hr.solid {
 .upgrade-button {
     width: 100px;
     height: 100px;
-    border: 3px solid #ccc;
-    background-color: #2c2c2c;
-    color: white;
     justify-content: center;
     text-align: center;
     line-height: 1;
     border-radius: 5px;
 }
+.unlockable {
+    border: 3px solid #ccc;
+    background-color: #2c2c2c;
+    color: white;
+}
+.not-unlockable {
+    border: 3px solid #666666;
+    background-color: #292828;
+    color: #666666;
+}
 .tooltip {
     position: relative;
 }
-.tooltip .tooltip-text-delayed, .tooltip .tooltip-text {
+.tooltip .tooltip-text-delayed {
     visibility: hidden;
     background-color: #1a1a1a;
     color: white;
@@ -189,6 +196,21 @@ hr.solid {
     z-index: 1;
     width: 120px;
     bottom: 90%;
+    left: 70%;
+    margin-left: -50px;
+    border-radius: 10px;
+}
+.tooltip .tooltip-text {
+    visibility: hidden;
+    background-color: #1a1a1a;
+    color: white;
+    border: 1px solid #ccc;
+    text-align: center;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    width: 150px;
+    bottom: 50%;
     left: 70%;
     margin-left: -50px;
     border-radius: 10px;
@@ -210,5 +232,29 @@ hr.solid {
 }
 .common {
     color: rgb(130, 130, 130);
+    display: inline-block;
+}
+.uncommon {
+    color: rgb(7, 131, 44);
+    display: inline-block;
+}
+.rare {
+    color: rgb(25, 7, 185);
+    display: inline-block;
+}
+.epic {
+    color: rgb(131, 26, 218);
+    display: inline-block;
+}
+.legendary {
+    color: rgb(219, 147, 14);
+    display: inline-block;
+}
+.not-enough {
+    color: red;
+    display: inline-block;
+}
+.enough {
+    color: green;
     display: inline-block;
 }

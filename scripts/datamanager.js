@@ -17,10 +17,10 @@ const miningData = [
         drops: [
             {
                 item: getItemById("pebble"),
-                baseDrop: 1,
+                baseDrop: 2,
                 dropChance: 100,
-                bonusDrop: 0,
-                bonusDropChance: 0
+                bonusDrop: 1,
+                bonusDropChance: 20
             }
         ]
     }
@@ -31,6 +31,7 @@ const upgradeData = [
         id: "pebbleInvUpgrade1",
         category: "pebbleInvUpgrade",
         title: "Pebble Inventory Upgrade 1",
+        description: "Increases the pebble inventory size to ",
         upgradeNumber: 1,
         available: true,
         unlockable: false,
@@ -48,6 +49,7 @@ const upgradeData = [
         id: "pebbleInvUpgrade2",
         category: "pebbleInvUpgrade",
         title: "Pebble Inventory Upgrade 2",
+        description: "Increases the pebble inventory size to ",
         upgradeNumber: 2,
         available: false,
         unlockable: false,
@@ -65,6 +67,7 @@ const upgradeData = [
         id: "pebbleInvUpgrade3",
         category: "pebbleInvUpgrade",
         title: "Pebble Inventory Upgrade 3",
+        description: "Increases the pebble inventory size to ",
         upgradeNumber: 3,
         available: false,
         unlockable: false,
@@ -87,7 +90,8 @@ const buttonStates = [
         timeLeft: 0,
         category: "mining",
         tier: 1,
-        unlocked: true
+        unlocked: true,
+        data: miningData[0]
     },
     {
         id: "mining-t1b2",
@@ -95,6 +99,7 @@ const buttonStates = [
         timeLeft: 0,
         category: "mining",
         tier: 1,
-        unlocked: false
+        unlocked: false,
+        data: miningData[0]
     }
 ]

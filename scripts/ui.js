@@ -39,6 +39,7 @@ function setupUI() {
     }
 
     updateUpgradeButtons();
+    updateSkillButtonTooltipTexts()
     emptyLog();
 }
 
@@ -164,11 +165,7 @@ function createUpgradeButton(upgrade) {
 
     const tooltip = document.createElement('span');
     tooltip.className = 'tooltip-text';
-    var tooltipText = 'Cost: ';
-    for (req of upgrade.requirements) {
-        tooltipText += '<br />' + req.item.name + ': '+ getItemById(req.item.id).amount  + '/' + req.amount;
-    }
-    tooltip.innerHTML = tooltipText;
+    tooltip.id = 'tooltip-text-' + upgrade.id;
 
     const button = document.createElement('button');
     button.className = 'upgrade-button';
@@ -181,6 +178,49 @@ function createUpgradeButton(upgrade) {
     div.appendChild(tooltip);
     div.appendChild(button);
     parent.appendChild(div);
+    updateUpgradeTooltips();
+}
+
+function updateUpgradeTooltips() {
+    updateUpgradeData();
+    for (upgrade of upgradeData) {
+        if (upgrade.available == true) {
+            const tooltip = document.getElementById('tooltip-text-' + upgrade.id);
+            var text = '';
+            switch (upgrade.category) {
+                case "pebbleInvUpgrade":
+                    text = upgrade.description + pebbleInvMaxProgression[upgrade.upgradeNumber] + '<br />' + '<br />';
+                    break;
+                default: break;
+            }
+            for (req of upgrade.requirements) {
+                if (req.item.amount >= req.amount) {
+                    text += '<div class="enough">' + getItemById(req.item.id).name + ' ' + req.item.amount + '/' + req.amount + '</div>' + '<br />';
+                }
+                else {
+                    text += '<div class="not-enough">' + getItemById(req.item.id).name +' ' + req.item.amount + '/' + req.amount + '</div>' + '<br />';
+                }
+            }
+            tooltip.innerHTML = text;
+        }
+    }
+    updateUpgradeButtonStates();
+}
+
+function updateUpgradeButtonStates() {
+    for (upgrade of upgradeData) {
+        if (upgrade.available == true) {
+            const button = document.getElementById(upgrade.id);
+            button.className = button.className.replace(" not-unlockable", "");
+            button.className = button.className.replace(" unlockable", "");
+            if (upgrade.unlockable == true) {
+                button.className += " unlockable";
+            }
+            else {
+                button.className += " not-unlockable";
+            }
+        }
+    }
 }
 
 function updateLog() {
@@ -188,5 +228,30 @@ function updateLog() {
     logContent.innerHTML = '';
     for (logElem of logBuffer) {
         logContent.innerHTML += logElem + '<br />';
+    }
+}
+
+function updateSkillButtonTooltipTexts() {
+    for (buttonState of buttonStates) {
+        if (buttonState.unlocked == true) {
+            const tooltipText = document.getElementById('tooltip-text-' + buttonState.id);
+            var text = 'Drops: <br />';
+            for (drop of buttonState.data.drops) {
+                var amountText = '';
+                amountText += drop.baseDrop;
+                if (drop.bonusDropChance > 0) {
+                    var max = drop.baseDrop + drop.bonusDrop;
+                    amountText += "-" + max
+                }
+                switch (drop.item.rarity) {
+                    case 'common':
+                        text += '<div class="common">'
+                        break;
+                    default: break;
+                }
+                text += amountText + ' ' + drop.item.name + ': ' + drop.dropChance + '% </div>';
+            }
+            tooltipText.innerHTML = text;
+        }
     }
 }

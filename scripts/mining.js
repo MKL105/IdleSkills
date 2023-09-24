@@ -22,31 +22,23 @@ function mineProgress(buttonId) {
 }
 
 function calculateDrops(buttonId) {
-    var total = 0;
     var tier = buttonId[buttonId.length - 3];
     var dropData = miningData.find(data => data.tier == tier);
-
-    for (drop of dropData.drops) {
-        total += drop.dropChance;
-    }
-
-    var roll = Math.floor(Math.random() * total) + 1;
-    var bonusRoll = Math.floor(Math.random() * 100) + 1;
-    var sum = 0;
+    var amount = 0;
+    var roll = 0;
+    var bonusRoll = 0;
 
     for (let i = 0; i < dropData.drops.length; i++) {
-        sum += dropData.drops[i].dropChance;
-        if (roll <= sum) {
-            var amount = 0;
+        roll = Math.floor(Math.random() * 100) + 1;
+        bonusRoll = Math.floor(Math.random() * 100) + 1;
+        amount = 0;
+        if (roll <= dropData.drops[i].dropChance) {
+            amount += dropData.drops[i].baseDrop;
             if (bonusRoll <= dropData.drops[i].bonusDropChance) {
-                amount = dropData.drops[i].baseDrop + dropData.drops[i].bonusDrop;
+                amount += dropData.drops[i].bonusDrop;
             }
-            else {
-                amount = dropData.drops[i].baseDrop;
-            }
-            finishMining(dropData.drops[i].item, amount);
-            break;
         }
+        finishMining(dropData.drops[i].item, amount);
     }
 }
 

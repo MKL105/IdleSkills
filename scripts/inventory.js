@@ -13,7 +13,7 @@ function addItem(id, amount) {
 
     (target.amount + amount >= target.maxAmount) ? target.amount = target.maxAmount : target.amount += amount;
     updateInventoryText(id);
-    updateUpgradeButtons();
+    updateUpgradeTooltips();
     return true;
 }
 
@@ -27,6 +27,6 @@ function removeItem(id, amount) {
     }
     target.amount -= amount;
     updateInventoryText(id);
-    updateUpgradeButtons();
+    updateUpgradeTooltips();
     return true;
 }
