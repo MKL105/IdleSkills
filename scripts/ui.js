@@ -248,9 +248,21 @@ function updateSkillButtonTooltipTexts() {
                     case 'common':
                         text += '<div class="common">'
                         break;
+                    case 'uncommon':
+                        text += '<div class="uncommon">'
+                        break;
+                    case 'rare':
+                        text += '<div class="rare">'
+                        break;
+                    case 'epic':
+                        text += '<div class="epic">'
+                        break;
+                    case 'legendary':
+                        text += '<div class="legendary">'
+                        break;
                     default: break;
                 }
-                text += amountText + ' ' + drop.item.name + ': ' + drop.dropChance + '% </div>';
+                text += amountText + ' ' + drop.item.name + ': ' + drop.dropChance + '% </div><br />';
             }
             tooltipText.innerHTML = text;
         }

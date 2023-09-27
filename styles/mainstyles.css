@@ -194,7 +194,7 @@ hr.solid {
     padding: 5px 0;
     position: absolute;
     z-index: 1;
-    width: 120px;
+    width: 150px;
     bottom: 90%;
     left: 70%;
     margin-left: -50px;
@@ -239,7 +239,7 @@ hr.solid {
     display: inline-block;
 }
 .rare {
-    color: rgb(25, 7, 185);
+    color: rgb(66, 92, 238);
     display: inline-block;
 }
 .epic {

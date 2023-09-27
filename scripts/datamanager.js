@@ -6,6 +6,14 @@ const inventory = [
         unlocked: true,
         amount: 0,
         maxAmount: 10
+    },
+    {
+        id: "square-pebble",
+        name: "Square Pebble",
+        rarity: "rare",
+        unlocked: true,
+        amount: 0,
+        maxAmount: 10
     }
 ];
 
@@ -21,6 +29,13 @@ const miningData = [
                 dropChance: 100,
                 bonusDrop: 1,
                 bonusDropChance: 20
+            },
+            {
+                item: getItemById("square-pebble"),
+                baseDrop: 1,
+                dropChance: 10,
+                bonusDrop: 1,
+                bonusDropChance: 0
             }
         ]
     }

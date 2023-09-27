@@ -8,6 +8,18 @@ function logDrop(item, amount, source) {
         case 'common':
             itemText += 'common">' + item.name + '</div>';
             break;
+        case 'uncommon':
+            itemText += 'uncommon">' + item.name + '</div>';
+            break;
+        case 'rare':
+            itemText += 'rare">' + item.name + '</div>';
+            break;
+        case 'epic':
+            itemText += 'epic">' + item.name + '</div>';
+            break;
+        case 'legendary':
+            itemText += 'legendary">' + item.name + '</div>';
+            break;
         default: break;
     }
 

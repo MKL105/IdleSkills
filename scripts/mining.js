@@ -38,7 +38,9 @@ function calculateDrops(buttonId) {
                 amount += dropData.drops[i].bonusDrop;
             }
         }
-        finishMining(dropData.drops[i].item, amount);
+        if (amount > 0) {
+            finishMining(dropData.drops[i].item, amount);
+        }
     }
 }
 
