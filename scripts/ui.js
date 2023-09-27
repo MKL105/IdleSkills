@@ -2,13 +2,10 @@
 const gameView = document.getElementById('game-view');
 const settingsView = document.getElementById('settings-view');
 const achievementsView = document.getElementById('achievements-view');
-const statsView = document.getElementById('stats-view');
 
 //Inventory variables
 const toggleInvButton = document.getElementById('toggle-inventory-button');
 const invBody = document.getElementById('inventory-body');
-
-const invPebble = document.getElementById('inv-pebble');
 
 //Initializes the UI once the window is fully loaded.
 window.onload = setupUI();
@@ -17,12 +14,10 @@ function setupUI() {
     gameView.style.display = 'block';
     settingsView.style.display = 'none';
     achievementsView.style.display = 'none';
-    statsView.style.display = 'none';
 
     //Set up inventory
     invBody.style.display = 'block';
     toggleInvButton.textContent = 'hide';
-    invPebble.style.display = 'block';
 
     //Set up skills tabs
     document.getElementById("default-open").click();
@@ -38,6 +33,8 @@ function setupUI() {
                 case 'woodcutting':
                     buttonState.timeLeft = woodcuttingData.find(data => data.tier == buttonState.tier).baseTime;
                     break;
+                case 'fishing':
+                    buttonState.timeLeft = fishingData.find(data => data.tier == buttonState.tier).baseTime;
                 default: break;
             }
             //-----------------------------------------------------------------
@@ -65,26 +62,22 @@ function toggleInv() {
 function openSettings() {
     gameView.style.display = 'none';
     achievementsView.style.display = 'none';
-    statsView.style.display = 'none';
     settingsView.style.display = 'block';
 }
 function closeSettings() {
     gameView.style.display = 'block';
     achievementsView.style.display = 'none';
-    statsView.style.display = 'none';
     settingsView.style.display = 'none';
 }
 
 function openAchievements() {
     gameView.style.display = 'none';
     achievementsView.style.display = 'block';
-    statsView.style.display = 'none';
     settingsView.style.display = 'none';
 }
 function closeAchievements() {
     gameView.style.display = 'block';
     achievementsView.style.display = 'none';
-    statsView.style.display = 'none';
     settingsView.style.display = 'none';
 }
 
@@ -116,6 +109,11 @@ function openSkill(event, skillName) {
                 updateSkillButton(button.id);
             }
             break;
+        case 'Fishing':
+            const fishingButtons = buttonStates.filter(button => button.category === 'fishing');
+            for (button of fishingButtons) {
+                updateSkillButton(button.id);
+            }
         default: break;
     }
 }
@@ -132,6 +130,9 @@ function updateSkillButton(id) {
             break;
         case 'woodcutting': 
             data = woodcuttingData.find(obj => obj.tier == tier);
+            break;
+        case 'fishing':
+            data = fishingData.find(obj => obj.tier == tier);
             break;
         default: break;
     }
@@ -182,7 +183,6 @@ function createUpgradeButton(upgrade) {
     const parent = document.getElementById('upgrades-list');
     div.appendChild(tooltip);
     div.appendChild(button);
-    console.log(div);
     parent.appendChild(div);
 }
 
@@ -191,7 +191,6 @@ function updateUpgradeTooltips() {
     for (upgrade of upgradeData) {
         if (upgrade.available == true) {
             const tooltip = document.getElementById('tooltip-text-' + upgrade.id);
-            console.log(tooltip);
             var text = '';
             switch (upgrade.category) {
                 case "pebbleInvUpgrade":

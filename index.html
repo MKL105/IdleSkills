@@ -47,6 +47,9 @@
                         <div class="inventory-item" id="inv-stick">
                             Stick: 0/10
                         </div>
+                        <div class="inventory-item" id="inv-bait">
+                            Bait: 0/10
+                        </div>
                     </div>
                 </div>
                 <hr class="solid"/>
@@ -76,7 +79,14 @@
                     </div>
                 </div>
                 <div id="Fishing", class="skills-tabcontent">
-                    <h3>Coming soon!</h3>
+                    <div class="skills-button-container tooltip">
+                        <span class="tooltip-text-delayed" id="tooltip-text-fishing-t1b1"></span>
+                        <button id="button-fishing-t1b1", class="skill-button", onclick="startFishing('fishing-t1b1')"><img src="images/Bait.png"></button>
+                        <div class="progress-bar" id="progress-bar-fishing-t1b1">
+                            <div class="bar">
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <hr class="solid"/>
                 <div class="upgrade-container">
@@ -110,12 +120,10 @@
             <h1>Achievements</h1>
             <h1>Coming soon!</h1>
         </div>
-        <div id="stats-view">
-            //TODO
-        </div>
         <script type="text/javascript" src="scripts/log.js"></script>
         <script type="text/javascript" src="scripts/mining.js"></script>
         <script type="text/javascript" src="scripts/woodcutting.js"></script>
+        <script type="text/javascript" src="scripts/fishing.js"></script>
         <script type="text/javascript" src="scripts/inventory.js"></script>
         <script type="text/javascript" src="scripts/upgrades.js"></script>
         <script type="text/javascript" src="scripts/datamanager.js"></script>

@@ -22,6 +22,14 @@ const inventory = [
         unlocked: true,
         amount: 0,
         maxAmount: 10
+    },
+    {
+        id: "bait",
+        name : "Bait",
+        rarity: "common",
+        unlocked: true,
+        amount: 0,
+        maxAmount: 10
     }
 ];
 
@@ -61,6 +69,23 @@ const woodcuttingData = [
                 dropChance: 100,
                 bonusDrop: 2,
                 bonusDropChance: 15
+            }
+        ]
+    }
+];
+
+const fishingData = [
+    {
+        id: "fishingDataT1",
+        tier: 1,
+        baseTime: 7,
+        drops: [
+            {
+                item: getItemById("bait"),
+                baseDrop: 2,
+                dropChance: 100,
+                bonusDrop: 1,
+                bonusDropChance: 40
             }
         ]
     }
@@ -685,5 +710,14 @@ const buttonStates = [
         tier: 1,
         unlocked: true,
         data: woodcuttingData[0]
+    },
+    {
+        id: "fishing-t1b1",
+        active: false,
+        timeLeft: 0,
+        category: "fishing",
+        tier: 1,
+        unlocked: true,
+        data: fishingData[0]
     }
 ]
