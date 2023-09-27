@@ -13,10 +13,17 @@ function buyUpgrade(evt) {
             inventory.find(x => x.id == "pebble").maxAmount = pebbleInvMaxProgression[upgrade.upgradeNumber];
             break;
         case "miningT1CommonBaseDropUpgrade":
-            const commonDrops = miningData.find(x => x.tier == 1).drops.filter(x => x.item.rarity == "common");
-            for (drops in commonDrops) {
-                drop.baseDrop++;
+            for (data of miningData) {
+                if (data.tier == 1) {
+                    for (drop of data.drops) {
+                        if (drop.item.rarity == "common") {
+                            drop.baseDrop++;
+                        }
+                    }
+                }
             }
+            console.log(miningData);
+            updateSkillButtonTooltipTexts();
             break;
         case "stickInvUpgrade":
             inventory.find(x => x.id == "stick").maxAmount = stickInvMaxProgression[upgrade.upgradeNumber];
