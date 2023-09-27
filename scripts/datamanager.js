@@ -689,6 +689,240 @@ const upgradeData = [
                 amount: squarePebbleInvMaxProgression[5]
             }
         ]
+    },
+    {
+        id: "baitInvUpgrade1",
+        category: "baitInvUpgrade",
+        title: "Bait Inventory Upgrade 1",
+        description: "Increases the bait inventory size to ",
+        upgradeNumber: 1,
+        available: true,
+        unlockable: false,
+        unlocksUpgrades: [
+            "baitInvUpgrade2"
+        ],
+        requirements: [
+            {
+                item: getItemById("bait"),
+                amount: baitInvMaxProgression[0]
+            }
+        ]
+    },
+    {
+        id: "baitInvUpgrade2",
+        category: "baitInvUpgrade",
+        title: "Bait Inventory Upgrade 2",
+        description: "Increases the bait inventory size to ",
+        upgradeNumber: 2,
+        available: false,
+        unlockable: false,
+        unlocksUpgrades: [
+            "baitInvUpgrade3"
+        ],
+        requirements: [
+            {
+                item: getItemById("bait"),
+                amount: baitInvMaxProgression[1]
+            }
+        ]
+    },
+    {
+        id: "baitInvUpgrade3",
+        category: "baitInvUpgrade",
+        title: "Bait Inventory Upgrade 3",
+        description: "Increases the bait inventory size to ",
+        upgradeNumber: 3,
+        available: false,
+        unlockable: false,
+        unlocksUpgrades: [
+            "baitInvUpgrade4"
+        ],
+        requirements: [
+            {
+                item: getItemById("bait"),
+                amount: baitInvMaxProgression[2]
+            }
+        ]
+    },
+    {
+        id: "baitInvUpgrade4",
+        category: "baitInvUpgrade",
+        title: "Bait Inventory Upgrade 4",
+        description: "Increases the bait inventory size to ",
+        upgradeNumber: 4,
+        available: false,
+        unlockable: false,
+        unlocksUpgrades: [
+            "baitInvUpgrade5"
+        ],
+        requirements: [
+            {
+                item: getItemById("bait"),
+                amount: baitInvMaxProgression[3]
+            }
+        ]
+    },
+    {
+        id: "baitInvUpgrade5",
+        category: "baitInvUpgrade",
+        title: "Bait Inventory Upgrade 5",
+        description: "Increases the bait inventory size to ",
+        upgradeNumber: 5,
+        available: false,
+        unlockable: false,
+        unlocksUpgrades: [
+            "baitInvUpgrade6"
+        ],
+        requirements: [
+            {
+                item: getItemById("bait"),
+                amount: baitInvMaxProgression[4]
+            }
+        ]
+    },
+    {
+        id: "baitInvUpgrade6",
+        category: "baitInvUpgrade",
+        title: "Bait Inventory Upgrade 6",
+        description: "Increases the bait inventory size to ",
+        upgradeNumber: 6,
+        available: false,
+        unlockable: false,
+        unlocksUpgrades: [
+            "baitInvUpgrade7"
+        ],
+        requirements: [
+            {
+                item: getItemById("bait"),
+                amount: baitInvMaxProgression[5]
+            }
+        ]
+    },
+    {
+        id: "baitInvUpgrade7",
+        category: "baitInvUpgrade",
+        title: "Bait Inventory Upgrade 7",
+        description: "Increases the bait inventory size to ",
+        upgradeNumber: 7,
+        available: false,
+        unlockable: false,
+        unlocksUpgrades: [
+            "baitInvUpgrade8"
+        ],
+        requirements: [
+            {
+                item: getItemById("bait"),
+                amount: baitInvMaxProgression[6]
+            }
+        ]
+    },
+    {
+        id: "baitInvUpgrade8",
+        category: "baitInvUpgrade",
+        title: "Bait Inventory Upgrade 8",
+        description: "Increases the bait inventory size to ",
+        upgradeNumber: 8,
+        available: false,
+        unlockable: false,
+        unlocksUpgrades: [
+            "baitInvUpgrade9"
+        ],
+        requirements: [
+            {
+                item: getItemById("bait"),
+                amount: baitInvMaxProgression[7]
+            }
+        ]
+    },
+    {
+        id: "baitInvUpgrade9",
+        category: "baitInvUpgrade",
+        title: "Bait Inventory Upgrade 9",
+        description: "Increases the bait inventory size to ",
+        upgradeNumber: 9,
+        available: false,
+        unlockable: false,
+        unlocksUpgrades: [
+            "baitInvUpgrade10"
+        ],
+        requirements: [
+            {
+                item: getItemById("bait"),
+                amount: baitInvMaxProgression[8]
+            }
+        ]
+    },
+    {
+        id: "baitInvUpgrade10",
+        category: "baitInvUpgrade",
+        title: "Bait Inventory Upgrade 10",
+        description: "Increases the bait inventory size to ",
+        upgradeNumber: 10,
+        available: false,
+        unlockable: false,
+        unlocksUpgrades: [
+            "baitInvUpgrade11"
+        ],
+        requirements: [
+            {
+                item: getItemById("bait"),
+                amount: baitInvMaxProgression[9]
+            }
+        ]
+    },
+    {
+        id: "baitInvUpgrade11",
+        category: "baitInvUpgrade",
+        title: "Bait Inventory Upgrade 11",
+        description: "Increases the bait inventory size to ",
+        upgradeNumber: 11,
+        available: false,
+        unlockable: false,
+        unlocksUpgrades: [
+            "baitInvUpgrade12"
+        ],
+        requirements: [
+            {
+                item: getItemById("bait"),
+                amount: baitInvMaxProgression[10]
+            }
+        ]
+    },
+    {
+        id: "baitInvUpgrade12",
+        category: "baitInvUpgrade",
+        title: "Bait Inventory Upgrade 12",
+        description: "Increases the bait inventory size to ",
+        upgradeNumber: 12,
+        available: false,
+        unlockable: false,
+        unlocksUpgrades: [
+            "baitInvUpgrade13"
+        ],
+        requirements: [
+            {
+                item: getItemById("bait"),
+                amount: baitInvMaxProgression[11]
+            }
+        ]
+    },
+    {
+        id: "baitInvUpgrade13",
+        category: "baitInvUpgrade",
+        title: "Bait Inventory Upgrade 13",
+        description: "Increases the bait inventory size to ",
+        upgradeNumber: 13,
+        available: false,
+        unlockable: false,
+        unlocksUpgrades: [
+            
+        ],
+        requirements: [
+            {
+                item: getItemById("bait"),
+                amount: baitInvMaxProgression[12]
+            }
+        ]
     }
 ]
 

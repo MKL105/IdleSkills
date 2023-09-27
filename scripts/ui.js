@@ -204,6 +204,8 @@ function updateUpgradeTooltips() {
                     break;
                 case "squarePebbleInvUpgrade":
                     text = upgrade.description + squarePebbleInvMaxProgression[upgrade.upgradeNumber] + '.<br />' + '<br />';
+                case "baitInvUpgrade":
+                    text = upgrade.description + baitInvMaxProgression[upgrade.upgradeNumber] + '.<br />' + '<br />';
                 default: break;
             }
             for (req of upgrade.requirements) {

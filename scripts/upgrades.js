@@ -1,6 +1,7 @@
 const pebbleInvMaxProgression = [10, 25, 50, 100, 200, 400, 750, 1000, 1500, 2500, 5000, 7500, 10000];
 const squarePebbleInvMaxProgression = [3, 5, 10, 20, 35, 60, 100]; 
 const stickInvMaxProgression = pebbleInvMaxProgression;
+const baitInvMaxProgression = pebbleInvMaxProgression;
 
 function buyUpgrade(evt) {
     var id = evt.currentTarget.id;
@@ -23,6 +24,8 @@ function buyUpgrade(evt) {
         case "squarePebbleInvUpgrade":
             inventory.find(x => x.id == "square-pebble").maxAmount = squarePebbleInvMaxProgression[upgrade.upgradeNumber];
             break;
+        case "baitInvUpgrade":
+            inventory.find(x => x.id == "bait").maxAmount = baitInvMaxProgression[upgrade.upgradeNumber];
         default:
             break;
     }
