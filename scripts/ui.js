@@ -30,11 +30,18 @@ function setupUI() {
     for (buttonState of buttonStates) {
         if (buttonState.unlocked == true) {
             //----------------------------------------------------------------
-        //Only use this part when not loading data from a save!
-        buttonState.timeLeft = miningData.find(data => data.tier == buttonState.tier).baseTime;
-        //-----------------------------------------------------------------
-
-        updateSkillButton(buttonState.id);
+            //Only use this part when not loading data from a save!
+            switch (buttonState.category) {
+                case 'mining':
+                    buttonState.timeLeft = miningData.find(data => data.tier == buttonState.tier).baseTime;
+                    break;
+                case 'woodcutting':
+                    buttonState.timeLeft = woodcuttingData.find(data => data.tier == buttonState.tier).baseTime;
+                    break;
+                default: break;
+            }
+            //-----------------------------------------------------------------
+            updateSkillButton(buttonState.id);
         }
     }
 
@@ -96,41 +103,39 @@ function openSkill(event, skillName) {
 
     document.getElementById(skillName).style.display = "block";
     event.currentTarget.className += " active";
-}
-
-function startProgress(id, obj) {
-    var progressBar = document.getElementById('progress-bar-' + id);
-    var button = document.getElementById(obj.category + '-' + id);
-    var baseTime = obj.baseTime;
-    progressBar.firstElementChild.innerHTML = baseTime + 's';
-    button.disabled = true;
-    progress(baseTime, baseTime, progressBar, obj, id);
-}
-
-function progress(timeLeft, timeTotal, progressBar, obj, id) {
-    var progressBarWidth = timeLeft * progressBar.clientWidth / timeTotal;
-    progressBar.firstElementChild.style.width = progressBarWidth + 'px';
-    progressBar.firstElementChild.innerHTML = timeLeft + 's';
-    if (timeLeft > 0) {
-        setTimeout(function() {
-            progress(timeLeft - 1, timeTotal, progressBar, obj, id);
-        }, 1000);
-    }
-    else {
-        storeDrop(obj.getDrop());
-        progressBar.firstElementChild.style.width = progressBar.clientWidth + 'px';
-        progressBar.firstElementChild.innerHTML = obj.baseTime + 's';
-        var button = document.getElementById(obj.category + '-' + id);
-        button.disabled = false;
+    switch (skillName) {
+        case 'Mining':
+            const miningButtons = buttonStates.filter(button => button.category === 'mining');
+            for (button of miningButtons) {
+                updateSkillButton(button.id);
+            }
+            break;
+        case 'Woodcutting':
+            const woodcuttingButtons = buttonStates.filter(button => button.category === 'woodcutting');
+            for (button of woodcuttingButtons) {
+                updateSkillButton(button.id);
+            }
+            break;
+        default: break;
     }
 }
 
 function updateSkillButton(id) {
+    console.log(id);
     var progressBar = document.getElementById('progress-bar-' + id);
     var button = document.getElementById('button-' + id);
     var tier = id[id.length - 3];
-    var data = miningData.find(obj => obj.tier == tier);
     var stateData = buttonStates.find(obj => obj.id == id);
+    var data;
+    switch (stateData.category) {
+        case 'mining': 
+            data = miningData.find(obj => obj.tier == tier);
+            break;
+        case 'woodcutting': 
+            data = woodcuttingData.find(obj => obj.tier == tier);
+            break;
+        default: break;
+    }
     var progressBarWidth = stateData.timeLeft * progressBar.clientWidth / data.baseTime;
     progressBar.firstElementChild.style.width = progressBarWidth + 'px';
     progressBar.firstElementChild.innerHTML = stateData.timeLeft + 's';

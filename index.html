@@ -44,6 +44,9 @@
                         <div class="inventory-item" id="inv-square-pebble">
                             Square Pebble: 0/10
                         </div>
+                        <div class="inventory-item" id="inv-stick">
+                            Stick: 0/10
+                        </div>
                     </div>
                 </div>
                 <hr class="solid"/>
@@ -54,18 +57,23 @@
                 </div>
                 <div id="Mining", class="skills-tabcontent">
                     <div class="skills-button-container tooltip">
-                        <span class="tooltip-text-delayed" id="tooltip-text-mining-t1b1">Collect Pebbles. Drops: Pebble</span>
+                        <span class="tooltip-text-delayed" id="tooltip-text-mining-t1b1"></span>
                         <button id="button-mining-t1b1", class="skill-button", onclick="startMining('mining-t1b1')"><img src="images/Stone.png"></button>
                         <div class="progress-bar" id="progress-bar-mining-t1b1">
                             <div class="bar">
-                                10s
                             </div>
                         </div>
                     </div>
                 </div>
                 <div id="Woodcutting", class="skills-tabcontent">
-                    <h3>Woodcutting</h3>
-                    <p>This is the woodcutting skill tab.</p>
+                    <div class="skills-button-container tooltip">
+                        <span class="tooltip-text-delayed" id="tooltip-text-woodcutting-t1b1"></span>
+                        <button id="button-woodcutting-t1b1", class="skill-button", onclick="startWoodcutting('woodcutting-t1b1')"><img src="images/Stick.png"></button>
+                        <div class="progress-bar" id="progress-bar-woodcutting-t1b1">
+                            <div class="bar">
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div id="Fishing", class="skills-tabcontent">
                     <h3>Fishing</h3>
@@ -89,7 +97,6 @@
                 <div class="log-tab">
                     <h1>Log</h1>
                     <div class="log-content" id="log-content">
-                        <p>This is a text <div class="red">hopefully</div> without a line break</p>
                     </div>
                 </div>
             </div>
@@ -107,6 +114,7 @@
         </div>
         <script type="text/javascript" src="scripts/log.js"></script>
         <script type="text/javascript" src="scripts/mining.js"></script>
+        <script type="text/javascript" src="scripts/woodcutting.js"></script>
         <script type="text/javascript" src="scripts/inventory.js"></script>
         <script type="text/javascript" src="scripts/upgrades.js"></script>
         <script type="text/javascript" src="scripts/datamanager.js"></script>

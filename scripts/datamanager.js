@@ -14,6 +14,14 @@ const inventory = [
         unlocked: true,
         amount: 0,
         maxAmount: 10
+    },
+    {
+        id: "stick",
+        name: "Stick",
+        rarity: "common",
+        unlocked: true,
+        amount: 0,
+        maxAmount: 10
     }
 ];
 
@@ -21,7 +29,7 @@ const miningData = [
     {
         id: "miningDataT1",
         tier: 1,
-        baseTime: 5,
+        baseTime: 7,
         drops: [
             {
                 item: getItemById("pebble"),
@@ -36,6 +44,23 @@ const miningData = [
                 dropChance: 10,
                 bonusDrop: 1,
                 bonusDropChance: 0
+            }
+        ]
+    }
+];
+
+const woodcuttingData = [
+    {
+        id: "woodcuttingDataT1",
+        tier: 1,
+        baseTime: 9,
+        drops: [
+            {
+                item: getItemById("stick"),
+                baseDrop: 3,
+                dropChance: 100,
+                bonusDrop: 2,
+                bonusDropChance: 15
             }
         ]
     }
@@ -109,12 +134,12 @@ const buttonStates = [
         data: miningData[0]
     },
     {
-        id: "mining-t1b2",
+        id: "woodcutting-t1b1",
         active: false,
         timeLeft: 0,
-        category: "mining",
+        category: "woodcutting",
         tier: 1,
-        unlocked: false,
-        data: miningData[0]
+        unlocked: true,
+        data: woodcuttingData[0]
     }
 ]
