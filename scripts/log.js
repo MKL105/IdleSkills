@@ -17,7 +17,7 @@ function logDrop(item, amount, source) {
 }
 
 function checkLogSize() {
-    if (logBuffer.length > logSize) {
+    if (logBuffer.length >= logSize) {
         logBuffer.pop();
     }
 }
