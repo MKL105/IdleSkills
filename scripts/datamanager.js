@@ -556,6 +556,114 @@ const upgradeData = [
                 amount: stickInvMaxProgression[12]
             }
         ]
+    },
+    {
+        id: "squarePebbleInvUpgrade1",
+        category: "squarePebbleInvUpgrade",
+        title: "Square Pebble Inventory Upgrade 1",
+        description: "Increases the square pebble inventory size to ",
+        upgradeNumber: 1,
+        available: true,
+        unlockable: false,
+        unlocksUpgrades: [
+            "squarePebbleInvUpgrade2"
+        ],
+        requirements: [
+            {
+                item: getItemById("square-pebble"),
+                amount: squarePebbleInvMaxProgression[0]
+            }
+        ]
+    },
+    {
+        id: "squarePebbleInvUpgrade2",
+        category: "squarePebbleInvUpgrade",
+        title: "Square Pebble Inventory Upgrade 2",
+        description: "Increases the square pebble inventory size to ",
+        upgradeNumber: 2,
+        available: false,
+        unlockable: false,
+        unlocksUpgrades: [
+            "squarePebbleInvUpgrade3"
+        ],
+        requirements: [
+            {
+                item: getItemById("square-pebble"),
+                amount: squarePebbleInvMaxProgression[1]
+            }
+        ]
+    },
+    {
+        id: "squarePebbleInvUpgrade3",
+        category: "squarePebbleInvUpgrade",
+        title: "Square Pebble Inventory Upgrade 3",
+        description: "Increases the square pebble inventory size to ",
+        upgradeNumber: 3,
+        available: false,
+        unlockable: false,
+        unlocksUpgrades: [
+            "squarePebbleInvUpgrade4"
+        ],
+        requirements: [
+            {
+                item: getItemById("square-pebble"),
+                amount: squarePebbleInvMaxProgression[2]
+            }
+        ]
+    },
+    {
+        id: "squarePebbleInvUpgrade4",
+        category: "squarePebbleInvUpgrade",
+        title: "Square Pebble Inventory Upgrade 4",
+        description: "Increases the square pebble inventory size to ",
+        upgradeNumber: 4,
+        available: false,
+        unlockable: false,
+        unlocksUpgrades: [
+            "squarePebbleInvUpgrade5"
+        ],
+        requirements: [
+            {
+                item: getItemById("square-pebble"),
+                amount: squarePebbleInvMaxProgression[3]
+            }
+        ]
+    },
+    {
+        id: "squarePebbleInvUpgrade5",
+        category: "squarePebbleInvUpgrade",
+        title: "Square Pebble Inventory Upgrade 5",
+        description: "Increases the square pebble inventory size to ",
+        upgradeNumber: 5,
+        available: false,
+        unlockable: false,
+        unlocksUpgrades: [
+            "squarePebbleInvUpgrade6"
+        ],
+        requirements: [
+            {
+                item: getItemById("square-pebble"),
+                amount: squarePebbleInvMaxProgression[4]
+            }
+        ]
+    },
+    {
+        id: "squarePebbleInvUpgrade6",
+        category: "squarePebbleInvUpgrade",
+        title: "Square Pebble Inventory Upgrade 6",
+        description: "Increases the square pebble inventory size to ",
+        upgradeNumber: 6,
+        available: false,
+        unlockable: false,
+        unlocksUpgrades: [
+
+        ],
+        requirements: [
+            {
+                item: getItemById("square-pebble"),
+                amount: squarePebbleInvMaxProgression[5]
+            }
+        ]
     }
 ]
 

@@ -17,6 +17,12 @@ function buyUpgrade(evt) {
                 drop.baseDrop++;
             }
             break;
+        case "stickInvUpgrade":
+            inventory.find(x => x.id == "stick").maxAmount = stickInvMaxProgression[upgrade.upgradeNumber];
+            break;
+        case "squarePebbleInvUpgrade":
+            inventory.find(x => x.id == "square-pebble").maxAmount = squarePebbleInvMaxProgression[upgrade.upgradeNumber];
+            break;
         default:
             break;
     }

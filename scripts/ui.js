@@ -199,9 +199,12 @@ function updateUpgradeTooltips() {
                     break;
                 case "miningT1CommonBaseDropUpgrade":
                     text = upgrade.description + '<br />' + '<br />';
-                case "stickInvUpgrade":
-                    text = upgrade.description + pebbleInvMaxProgression[upgrade.upgradeNumber] + '.<br />' + '<br />';
                     break;
+                case "stickInvUpgrade":
+                    text = upgrade.description + stickInvMaxProgression[upgrade.upgradeNumber] + '.<br />' + '<br />';
+                    break;
+                case "squarePebbleInvUpgrade":
+                    text = upgrade.description + squarePebbleInvMaxProgression[upgrade.upgradeNumber] + '.<br />' + '<br />';
                 default: break;
             }
             for (req of upgrade.requirements) {
