@@ -35,7 +35,7 @@ function calculateMiningDrops(buttonId) {
         if (roll <= dropData.drops[i].dropChance) {
             amount += dropData.drops[i].baseDrop;
             if (bonusRoll <= dropData.drops[i].bonusDropChance) {
-                amount += dropData.drops[i].bonusDrop;
+                amount += Math.floor(Math.random() * dropData.drops[i].bonusDrop) + 1;
             }
         }
         if (amount > 0) {
