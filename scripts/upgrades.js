@@ -1,4 +1,6 @@
-const pebbleInvMaxProgression = [10, 25, 50, 100];
+const pebbleInvMaxProgression = [10, 25, 50, 100, 200, 400, 750, 1000, 1500, 2500, 5000, 7500, 10000];
+const squarePebbleInvMaxProgression = [3, 5, 10, 20, 35, 60, 100]; 
+const stickInvMaxProgression = pebbleInvMaxProgression;
 
 function buyUpgrade(evt) {
     var id = evt.currentTarget.id;
@@ -8,6 +10,12 @@ function buyUpgrade(evt) {
     switch (upgrade.category) {
         case "pebbleInvUpgrade":
             inventory.find(x => x.id == "pebble").maxAmount = pebbleInvMaxProgression[upgrade.upgradeNumber];
+            break;
+        case "miningT1CommonBaseDropUpgrade":
+            const commonDrops = miningData.find(x => x.tier == 1).drops.filter(x => x.item.rarity == "common");
+            for (drops in commonDrops) {
+                drop.baseDrop++;
+            }
             break;
         default:
             break;
@@ -21,6 +29,7 @@ function buyUpgrade(evt) {
         upgradeData.find(x => x.id == unlock).available = true;
     }
     updateUpgradeButtons();
+    updateUpgradeData();
 }
 
 function updateUpgradeData() {

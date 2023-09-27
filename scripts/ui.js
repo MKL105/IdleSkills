@@ -121,7 +121,6 @@ function openSkill(event, skillName) {
 }
 
 function updateSkillButton(id) {
-    console.log(id);
     var progressBar = document.getElementById('progress-bar-' + id);
     var button = document.getElementById('button-' + id);
     var tier = id[id.length - 3];
@@ -162,6 +161,7 @@ function updateUpgradeButtons() {
             createUpgradeButton(upgrade);
         }
     }
+    updateUpgradeTooltips();
 }
 
 function createUpgradeButton(upgrade) {
@@ -182,8 +182,8 @@ function createUpgradeButton(upgrade) {
     const parent = document.getElementById('upgrades-list');
     div.appendChild(tooltip);
     div.appendChild(button);
+    console.log(div);
     parent.appendChild(div);
-    updateUpgradeTooltips();
 }
 
 function updateUpgradeTooltips() {
@@ -191,10 +191,16 @@ function updateUpgradeTooltips() {
     for (upgrade of upgradeData) {
         if (upgrade.available == true) {
             const tooltip = document.getElementById('tooltip-text-' + upgrade.id);
+            console.log(tooltip);
             var text = '';
             switch (upgrade.category) {
                 case "pebbleInvUpgrade":
-                    text = upgrade.description + pebbleInvMaxProgression[upgrade.upgradeNumber] + '<br />' + '<br />';
+                    text = upgrade.description + pebbleInvMaxProgression[upgrade.upgradeNumber] + '.<br />' + '<br />';
+                    break;
+                case "miningT1CommonBaseDropUpgrade":
+                    text = upgrade.description + '<br />' + '<br />';
+                case "stickInvUpgrade":
+                    text = upgrade.description + pebbleInvMaxProgression[upgrade.upgradeNumber] + '.<br />' + '<br />';
                     break;
                 default: break;
             }
