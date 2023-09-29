@@ -8,6 +8,7 @@ function addItem(id, amount) {
     target = inventory.find(item => item.id === id);
 
     if (target.amount == target.maxAmount) {
+        logError('fullInventory');
         return false;
     }
 

@@ -23,7 +23,22 @@ function logDrop(item, amount, source) {
         default: break;
     }
 
-    var logText = '<p>' + getCurrentTime() + '&emsp; Got ' + amount + 'x '+ itemText + ' from ' + source + '.</p>';
+    var logText = '<p>' + getCurrentTime() + '&emsp;Got ' + amount + 'x '+ itemText + ' from ' + source + '.</p>';
+    logBuffer.unshift(logText);
+    updateLog();
+}
+
+function logError(error) {
+    checkLogSize();
+    var itemText = "";
+    var logText = "";
+    switch (error) {
+        case 'fullInventory':
+            itemText = '<div class="error">Inventory full!</div>';
+            logText = '<p>' + getCurrentTime() + '&emsp;' + itemText + '</p>';
+            break;
+        default: break;
+    }
     logBuffer.unshift(logText);
     updateLog();
 }

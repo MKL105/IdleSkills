@@ -250,7 +250,7 @@ hr.solid {
     color: rgb(219, 147, 14);
     display: inline-block;
 }
-.not-enough {
+.not-enough, .error {
     color: red;
     display: inline-block;
 }
