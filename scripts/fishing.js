@@ -26,15 +26,26 @@ function calculateFishingDrops(buttonId) {
     var dropData = fishingData.find(data => data.tier == tier);
     var amount = 0;
     var roll = 0;
-    var bonusRoll = 0;
 
     for (let i = 0; i < dropData.drops.length; i++) {
-        roll = Math.floor(Math.random() * 100) + 1;
-        bonusRoll = Math.floor(Math.random() * 100) + 1;
         amount = 0;
-        if (roll <= dropData.drops[i].dropChance) {
+        var total = 100;
+        var percentage = dropData.drops[i].dropChance;
+        while ((percentage < 1) && (percentage > 0)) {
+            percentage *= 10;
+            total *= 10;
+        }
+        roll = Math.floor(Math.random() * total) + 1;
+        if (roll <= percentage) {
             amount += dropData.drops[i].baseDrop;
-            if (bonusRoll <= dropData.drops[i].bonusDropChance) {
+            total = 100;
+            percentage = dropData.drops[i].bonusDropChance;
+            while ((percentage < 1) && (percentage > 0)) {
+                percentage *= 10;
+                total *= 10;
+            }
+            roll = Math.floor(Math.random() * total) + 1;
+            if (roll <= percentage) {
                 amount += Math.floor(Math.random() * dropData.drops[i].bonusDrop) + 1;
             }
         }
