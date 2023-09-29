@@ -12,6 +12,7 @@
  * not, see <https://www.gnu.org/licenses>.
  */
 
+/* General Style Settings */
 body {
     background-color: #1a1a1a;
     color: white;
@@ -27,12 +28,11 @@ button {
     font-family: 'Times New Roman', Times, serif;
     font-size: 16px;
 }
-.header {
-    text-align: center;
+hr.solid {
+  border-top: 3px solid #bbb;
 }
-.sideheader {
-    text-align: left;
-}
+
+/* Buttons */
 .ui-button {
     background-color: transparent;
     border: 2px solid #ccc;
@@ -40,6 +40,16 @@ button {
     color: white;
     font-size: 16px;
 }
+.textbutton {
+  background:none;
+  border:none;
+  margin:0;
+  padding:0;
+  cursor: pointer;
+  color: white;
+}
+
+/* Navbar */
 .navbar {
     text-align: center;
 }
@@ -48,21 +58,21 @@ button {
     text-align: left;
     margin: 20px;
 }
+.navbar-inner a {
+    color: white;
+}
+
+/* Main Layout */
+.sideheader {
+  text-align: left;
+}
 .sideheader-inner {
     display:inline-block;
     text-align: left;
     margin: 5px;
 }
-hr.solid {
-    border-top: 3px solid #bbb;
-}
-.textbutton {
-    background:none;
-    border:none;
-    margin:0;
-    padding:0;
-    cursor: pointer;
-    color: white;
+.header {
+  text-align: center;
 }
 .topright {
     color: white;
@@ -70,6 +80,38 @@ hr.solid {
     font-size: 50px;
     margin-right: 50px;
 }
+.split {
+  height: 100%;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+.lefthalf {
+  left: 0;
+  width: 75%;
+  float: left;
+}
+.righthalf {
+  right: 0;
+  width: 24%;
+  float: right;
+  border: 1px solid #ccc;
+  overflow: hidden;
+  padding-bottom: 10px;
+}
+.stats-tab {
+  padding-left: 20px;
+  height: 55vh;
+  overflow-x: hidden;
+}
+.log-tab {
+  padding-left: 20px;
+  height: 20vh;
+  overflow: hidden;
+}
+
+/* Skills */
 .skills-tab {
     overflow: hidden;
     border: 1px solid #ccc;
@@ -97,79 +139,83 @@ hr.solid {
     border: 1px solid #ccc;
     border-top: none;
 }
+.skill-button {
+  width: 100px;
+  height: 100px;
+  border: 3px solid #ccc;
+  background-color: #2c2c2c;
+}
+.skill-button img {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+.skills-button-container {
+  width: 100px;
+  display:inline-block;
+  text-align: left;
+  margin: 20px;
+}
+.skills-button-container p{
+  text-align: center;
+}
+.progress-bar {
+  background-color: #1a1a1a;
+  width: 98px;
+  height: 20px;
+  align-items: center;
+  border: 1px solid #ccc;
+}
+.progress-bar div {
+  background-color: #2c2c2c;
+  width: 100%;
+  height: 20px;
+  text-align: right;
+  line-height: 20px;
+  padding: 0 5px;
+  box-sizing: border-box;
+}
 
-.split {
-    height: 100%;
-    z-index: 1;
-    top: 0;
-    overflow-x: hidden;
-    padding-top: 20px;
-}
-.lefthalf {
-    left: 0;
-    width: 75%;
-    float: left;
-}
-.righthalf {
-    right: 0;
-    width: 24%;
-    float: right;
-    border: 1px solid #ccc;
-    overflow: hidden;
-    padding-bottom: 10px;
-}
-.stats-tab {
-    padding-left: 20px;
-    height: 55vh;
-    overflow-x: hidden;
-}
-.log-tab {
-    padding-left: 20px;
-    height: 20vh;
-    overflow: hidden;
-}
+/* Log */
 .log-content {
     height: 76%;
     overflow-x: hidden;
     padding-right: 7px;
 }
-.skill-button {
-    width: 100px;
-    height: 100px;
-    border: 3px solid #ccc;
-    background-color: #2c2c2c;
+.log-content p {
+  display: inline;
 }
-.skill-button img {
-    width: 100%;
-    height: 100%;
-    padding: 0;
-    margin: 0;
+.common {
+  color: rgb(130, 130, 130);
+  display: inline-block;
 }
-.skills-button-container {
-    width: 100px;
-    display:inline-block;
-    text-align: left;
-    margin: 20px;
+.uncommon {
+  color: rgb(7, 131, 44);
+  display: inline-block;
 }
-.skills-button-container p{
-    text-align: center;
+.rare {
+  color: rgb(66, 92, 238);
+  display: inline-block;
 }
-.progress-bar {
-    background-color: #1a1a1a;
-    width: 98px;
-    height: 20px;
-    align-items: center;
-    border: 1px solid #ccc;
+.epic {
+  color: rgb(131, 26, 218);
+  display: inline-block;
 }
-.progress-bar div {
-    background-color: #2c2c2c;
-    width: 100%;
-    height: 20px;
-    text-align: right;
-    line-height: 20px;
-    padding: 0 5px;
-    box-sizing: border-box;
+.legendary {
+  color: rgb(219, 147, 14);
+  display: inline-block;
 }
+.not-enough, .error {
+  color: red;
+  display: inline-block;
+}
+.enough {
+  color: green;
+  display: inline-block;
+}
+
+/* Upgrades */
 .upgrades-list {
     padding-top: 10px;
 }
@@ -239,36 +285,4 @@ hr.solid {
 .invisible-link {
     color: white;
     text-decoration: none;
-}
-
-.log-content p {
-    display: inline;
-}
-.common {
-    color: rgb(130, 130, 130);
-    display: inline-block;
-}
-.uncommon {
-    color: rgb(7, 131, 44);
-    display: inline-block;
-}
-.rare {
-    color: rgb(66, 92, 238);
-    display: inline-block;
-}
-.epic {
-    color: rgb(131, 26, 218);
-    display: inline-block;
-}
-.legendary {
-    color: rgb(219, 147, 14);
-    display: inline-block;
-}
-.not-enough, .error {
-    color: red;
-    display: inline-block;
-}
-.enough {
-    color: green;
-    display: inline-block;
 }

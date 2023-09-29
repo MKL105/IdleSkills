@@ -14,133 +14,142 @@
 
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-		<title>Idle Skills</title>
-        <link rel="stylesheet" type="text/css" href="styles/mainstyles.css"/>
-        <link rel="icon" href="images/Stone.png">
-    </head>
-    <body>
-        <div class="header">
-            <h1>Idle Skills</h1>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Idle Skills</title>
+  <link rel="stylesheet" type="text/css" href="styles/mainstyles.css">
+  <link rel="icon" href="images/Stone.png">
+</head>
+
+<body>
+  <div class="header">
+    <h1>Idle Skills</h1>
+  </div>
+  <div class="navbar">
+    <div class="navbar-inner">
+      v0.0.0 <a href="changelog.html" target="_blank">changelog</a>
+    </div>
+    <div class="navbar-inner">
+      <button type="button" class="textbutton" onclick="openSettings()">Settings</button>
+    </div>
+    <div class="navbar-inner">
+      <button type="button" class="textbutton" onclick="openAchievements()">Achievements</button>
+    </div>
+    <div class="navbar-inner">
+      <a href="profile.html" target="_blank" class="invisible-link">Profile</a>
+    </div>
+  </div>
+  <hr class="solid">
+  <div id="game-view">
+    <div class="split lefthalf">
+      <div class="sideheader">
+        <div class="sideheader-inner">
+          <h1>Inventory</h1>
         </div>
-        <div class="navbar">
-            <div class="navbar-inner">
-                v0.0.0 <a href="changelog.html" target="_blank">changelog</a>
-            </div>  
-            <div class="navbar-inner">
-                <button type="button" class="textbutton" onclick="openSettings()">Settings</button>
-            </div>
-            <div class="navbar-inner">
-                <button type="button" class="textbutton" onclick="openAchievements()">Achievements</button>
-            </div>
-            <div class="navbar-inner">
-                <a href="profile.html" target="_blank" class="invisible-link">Profile</a>
-            </div>
+        <div class="sideheader-inner">
+          <button class="ui-button" id="toggle-inventory-button" onclick="toggleInv()">show</button>
         </div>
-        <hr class="solid"/>
-        <div id="game-view">
-            <div class="split lefthalf">
-                <div class="sideheader">
-                    <div class="sideheader-inner">
-                        <h1>Inventory</h1>   
-                    </div>
-                    <div class="sideheader-inner">
-                        <button class="ui-button" id="toggle-inventory-button" onclick="toggleInv()">show</button>
-                    </div>
-                </div>
-                <div id="inventory-body">
-                    <div class="inventory-tab" id="inventory-mining">
-                        <div class="inventory-item" id="inv-pebble">
-                            Pebble: 0/10
-                        </div>
-                        <div class="inventory-item" id="inv-square-pebble">
-                            Square Pebble: 0/3
-                        </div>
-                        <div class="inventory-item" id="inv-stick">
-                            Stick: 0/10
-                        </div>
-                        <div class="inventory-item" id="inv-bait">
-                            Bait: 0/10
-                        </div>
-                    </div>
-                </div>
-                <hr class="solid"/>
-                <div class="skills-tab">
-                    <button class="skills-tablinks" onclick="openSkill(event, 'Mining')", id="default-open">Mining</button>
-                    <button class="skills-tablinks" onclick="openSkill(event, 'Woodcutting')">Woodcutting</button>
-                    <button class="skills-tablinks" onclick="openSkill(event, 'Fishing')">Fishing</button>
-                </div>
-                <div id="Mining", class="skills-tabcontent">
-                    <div class="skills-button-container tooltip">
-                        <span class="tooltip-text-delayed" id="tooltip-text-mining-t1b1"></span>
-                        <button id="button-mining-t1b1", class="skill-button", onclick="startMining('mining-t1b1')"><img src="images/Stone.png"></button>
-                        <div class="progress-bar" id="progress-bar-mining-t1b1">
-                            <div class="bar">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="Woodcutting", class="skills-tabcontent">
-                    <div class="skills-button-container tooltip">
-                        <span class="tooltip-text-delayed" id="tooltip-text-woodcutting-t1b1"></span>
-                        <button id="button-woodcutting-t1b1", class="skill-button", onclick="startWoodcutting('woodcutting-t1b1')"><img src="images/Stick.png"></button>
-                        <div class="progress-bar" id="progress-bar-woodcutting-t1b1">
-                            <div class="bar">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="Fishing", class="skills-tabcontent">
-                    <div class="skills-button-container tooltip">
-                        <span class="tooltip-text-delayed" id="tooltip-text-fishing-t1b1"></span>
-                        <button id="button-fishing-t1b1", class="skill-button", onclick="startFishing('fishing-t1b1')"><img src="images/Bait.png"></button>
-                        <div class="progress-bar" id="progress-bar-fishing-t1b1">
-                            <div class="bar">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <hr class="solid"/>
-                <div class="upgrade-container">
-                    <h1>Upgrades</h1>
-                    <div class="upgrades-list" id="upgrades-list">
-                        <div class="upgrade">
-                            <button class="upgrade-button" onclick="buyUpgrade('pebbleInvUpgrade1')">Upgrade Pebble inventory space</button>
-                        </div>
-                    </div>
-                </div>
+      </div>
+      <div id="inventory-body">
+        <div class="inventory-tab" id="inventory-mining">
+          <div class="inventory-item" id="inv-pebble">
+            Pebble: 0/10
+          </div>
+          <div class="inventory-item" id="inv-square-pebble">
+            Square Pebble: 0/3
+          </div>
+          <div class="inventory-item" id="inv-stick">
+            Stick: 0/10
+          </div>
+          <div class="inventory-item" id="inv-bait">
+            Bait: 0/10
+          </div>
+        </div>
+      </div>
+      <hr class="solid">
+      <div class="skills-tab">
+        <button class="skills-tablinks" onclick="openSkill(event, 'mining')" id="default-open">Mining</button>
+        <button class="skills-tablinks" onclick="openSkill(event, 'woodcutting')">Woodcutting</button>
+        <button class="skills-tablinks" onclick="openSkill(event, 'fishing')">Fishing</button>
+      </div>
+      <div id="mining" class="skills-tabcontent">
+        <div class="skills-button-container tooltip">
+          <span class="tooltip-text-delayed" id="tooltip-text-mining-t1b1"></span>
+          <button id="button-mining-t1b1" class="skill-button" onclick="startMining('mining-t1b1')"><img
+              src="images/Stone.png" alt="Image of a stone."></button>
+          <div class="progress-bar" id="progress-bar-mining-t1b1">
+            <div class="bar">
             </div>
-            <div class="split righthalf">
-                <div class="stats-tab">
-                    <h1>Stats</h1>
-                </div>
-                <hr class="solid">
-                <div class="log-tab">
-                    <h1>Log</h1>
-                    <div class="log-content" id="log-content">
-                    </div>
-                </div>
+          </div>
+        </div>
+      </div>
+      <div id="woodcutting" class="skills-tabcontent">
+        <div class="skills-button-container tooltip">
+          <span class="tooltip-text-delayed" id="tooltip-text-woodcutting-t1b1"></span>
+          <button id="button-woodcutting-t1b1" class="skill-button"
+            onclick="startWoodcutting('woodcutting-t1b1')"><img src="images/Stick.png" alt="Image of a stick."></button>
+          <div class="progress-bar" id="progress-bar-woodcutting-t1b1">
+            <div class="bar">
             </div>
+          </div>
         </div>
-        <div id="settings-view">
-            <span class="topright"><button type="button" class="textbutton topright" onclick="closeSettings()">&times</button></span>
-            <h1>Settings</h1>
-            <h1>Coming soon!</h1>
+      </div>
+      <div id="fishing" class="skills-tabcontent">
+        <div class="skills-button-container tooltip">
+          <span class="tooltip-text-delayed" id="tooltip-text-fishing-t1b1"></span>
+          <button id="button-fishing-t1b1" class="skill-button"
+            onclick="startFishing('fishing-t1b1')"><img src="images/Bait.png" alt="Image of a worm."></button>
+          <div class="progress-bar" id="progress-bar-fishing-t1b1">
+            <div class="bar">
+            </div>
+          </div>
         </div>
-        <div id="achievements-view">
-            <span class="topright"><button type="button" class="textbutton topright" onclick="closeAchievements()">&times</button></span>
-            <h1>Achievements</h1>
-            <h1>Coming soon!</h1>
+      </div>
+      <hr class="solid">
+      <div class="upgrade-container">
+        <h1>Upgrades</h1>
+        <div class="upgrades-list" id="upgrades-list">
+          <div class="upgrade">
+            <button class="upgrade-button" onclick="buyUpgrade('pebbleInvUpgrade1')">Upgrade Pebble
+              inventory space</button>
+          </div>
         </div>
-        <script type="text/javascript" src="scripts/log.js"></script>
-        <script type="text/javascript" src="scripts/mining.js"></script>
-        <script type="text/javascript" src="scripts/woodcutting.js"></script>
-        <script type="text/javascript" src="scripts/fishing.js"></script>
-        <script type="text/javascript" src="scripts/inventory.js"></script>
-        <script type="text/javascript" src="scripts/upgrades.js"></script>
-        <script type="text/javascript" src="scripts/datamanager.js"></script>
-        <script type="text/javascript" src="scripts/ui.js"></script>
-    </body>
+      </div>
+    </div>
+    <div class="split righthalf">
+      <div class="stats-tab">
+        <h1>Stats</h1>
+      </div>
+      <hr class="solid">
+      <div class="log-tab">
+        <h1>Log</h1>
+        <div class="log-content" id="log-content">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="settings-view">
+    <span class="topright"><button type="button" class="textbutton topright"
+        onclick="closeSettings()">&times;</button></span>
+    <h1>Settings</h1>
+    <h1>Coming soon!</h1>
+  </div>
+  <div id="achievements-view">
+    <span class="topright"><button type="button" class="textbutton topright"
+        onclick="closeAchievements()">&times;</button></span>
+    <h1>Achievements</h1>
+    <h1>Coming soon!</h1>
+  </div>
+  <script src="scripts/log.js"></script>
+  <script src="scripts/mining.js"></script>
+  <script src="scripts/woodcutting.js"></script>
+  <script src="scripts/fishing.js"></script>
+  <script src="scripts/inventory.js"></script>
+  <script src="scripts/upgrades.js"></script>
+  <script src="scripts/datamanager.js"></script>
+  <script src="scripts/ui.js"></script>
+</body>
+
 </html>

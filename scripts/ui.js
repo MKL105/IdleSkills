@@ -111,19 +111,19 @@ function openSkill(event, skillName) {
     document.getElementById(skillName).style.display = "block";
     event.currentTarget.className += " active";
     switch (skillName) {
-        case 'Mining':
+        case 'mining':
             const miningButtons = buttonStates.filter(button => button.category === 'mining');
             for (button of miningButtons) {
                 updateSkillButton(button.id);
             }
             break;
-        case 'Woodcutting':
+        case 'woodcutting':
             const woodcuttingButtons = buttonStates.filter(button => button.category === 'woodcutting');
             for (button of woodcuttingButtons) {
                 updateSkillButton(button.id);
             }
             break;
-        case 'Fishing':
+        case 'fishing':
             const fishingButtons = buttonStates.filter(button => button.category === 'fishing');
             for (button of fishingButtons) {
                 updateSkillButton(button.id);
@@ -208,26 +208,26 @@ function updateUpgradeTooltips() {
             var text = '';
             switch (upgrade.category) {
                 case "pebbleInvUpgrade":
-                    text = upgrade.description + pebbleInvMaxProgression[upgrade.upgradeNumber] + '.<br />' + '<br />';
+                    text = upgrade.description + pebbleInvMaxProgression[upgrade.upgradeNumber] + '.<br/>' + '<br/>';
                     break;
                 case "miningT1CommonBaseDropUpgrade":
-                    text = upgrade.description + '<br />' + '<br />';
+                    text = upgrade.description + '<br/>' + '<br/>';
                     break;
                 case "stickInvUpgrade":
-                    text = upgrade.description + stickInvMaxProgression[upgrade.upgradeNumber] + '.<br />' + '<br />';
+                    text = upgrade.description + stickInvMaxProgression[upgrade.upgradeNumber] + '.<br/>' + '<br/>';
                     break;
                 case "squarePebbleInvUpgrade":
-                    text = upgrade.description + squarePebbleInvMaxProgression[upgrade.upgradeNumber] + '.<br />' + '<br />';
+                    text = upgrade.description + squarePebbleInvMaxProgression[upgrade.upgradeNumber] + '.<br/>' + '<br/>';
                 case "baitInvUpgrade":
-                    text = upgrade.description + baitInvMaxProgression[upgrade.upgradeNumber] + '.<br />' + '<br />';
+                    text = upgrade.description + baitInvMaxProgression[upgrade.upgradeNumber] + '.<br/>' + '<br/>';
                 default: break;
             }
             for (req of upgrade.requirements) {
                 if (req.item.amount >= req.amount) {
-                    text += '<div class="enough">' + getItemById(req.item.id).name + ' ' + req.item.amount + '/' + req.amount + '</div>' + '<br />';
+                    text += '<div class="enough">' + getItemById(req.item.id).name + ' ' + req.item.amount + '/' + req.amount + '</div>' + '<br/>';
                 }
                 else {
-                    text += '<div class="not-enough">' + getItemById(req.item.id).name +' ' + req.item.amount + '/' + req.amount + '</div>' + '<br />';
+                    text += '<div class="not-enough">' + getItemById(req.item.id).name +' ' + req.item.amount + '/' + req.amount + '</div>' + '<br/>';
                 }
             }
             tooltip.innerHTML = text;
@@ -257,7 +257,7 @@ function updateLog() {
     const logContent = document.getElementById('log-content');
     logContent.innerHTML = '';
     for (logElem of logBuffer) {
-        logContent.innerHTML += logElem + '<br />';
+        logContent.innerHTML += logElem + '<br/>';
     }
 }
 
@@ -265,7 +265,7 @@ function updateSkillButtonTooltipTexts() {
     for (buttonState of buttonStates) {
         if (buttonState.unlocked == true) {
             const tooltipText = document.getElementById('tooltip-text-' + buttonState.id);
-            var text = 'Drops: <br />';
+            var text = 'Drops: <br/>';
             for (drop of buttonState.data.drops) {
                 var amountText = '';
                 amountText += drop.baseDrop;
@@ -291,7 +291,7 @@ function updateSkillButtonTooltipTexts() {
                         break;
                     default: break;
                 }
-                text += amountText + ' ' + drop.item.name + ': ' + drop.dropChance + '% </div><br />';
+                text += amountText + ' ' + drop.item.name + ': ' + drop.dropChance + '% </div><br/>';
             }
             tooltipText.innerHTML = text;
         }
