@@ -74,4 +74,5 @@ function finishWoodcutting(item, amount) {
     if (success) {
         logDrop(item, amount, 'woodcutting');
     }
+    updateSkillTabStatus();
 }

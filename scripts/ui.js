@@ -59,6 +59,7 @@ function setupUI() {
     updateUpgradeButtons();
     updateSkillButtonTooltipTexts()
     emptyLog();
+    updateSkillTabStatus();
 }
 
 //Displays and hides the inventory if the according button is clicked.
@@ -130,6 +131,7 @@ function openSkill(event, skillName) {
             }
         default: break;
     }
+    updateSkillTabStatus();
 }
 
 function updateSkillButton(id) {
@@ -258,6 +260,7 @@ function updateLog() {
     logContent.innerHTML = '';
     for (logElem of logBuffer) {
         logContent.innerHTML += logElem + '<br/>';
+        updateSkillTabStatus();
     }
 }
 
@@ -296,4 +299,23 @@ function updateSkillButtonTooltipTexts() {
             tooltipText.innerHTML = text;
         }
     }
+}
+
+function updateSkillTabStatus() {
+  const container = document.getElementById('skills-tab');
+  const skillButtons = container.children;
+  for (skillButton of skillButtons) {
+    if (skillButton.className.includes('active')) {
+      skillButton.innerHTML = skillButton.innerHTML.replace(' (!)', '');
+    }
+    else {
+      const category = skillButton.getAttribute('data-category');
+      const categoryButtons = buttonStates.filter(button => button.category == category);
+      const availableButtons = categoryButtons.filter(button => button.active == false);
+      skillButton.innerHTML = skillButton.innerHTML.replace(' (!)', '');
+      if (availableButtons.length > 0) {
+        skillButton.innerHTML += ' (!)';
+      }
+    }
+  }
 }

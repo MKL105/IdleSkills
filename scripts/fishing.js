@@ -74,4 +74,5 @@ function finishFishing(item, amount) {
     if (success) {
         logDrop(item, amount, 'fishing');
     }
+    updateSkillTabStatus();
 }

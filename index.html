@@ -69,10 +69,23 @@
         </div>
       </div>
       <hr class="solid">
-      <div class="skills-tab">
-        <button class="skills-tablinks" onclick="openSkill(event, 'mining')" id="default-open">Mining</button>
-        <button class="skills-tablinks" onclick="openSkill(event, 'woodcutting')">Woodcutting</button>
-        <button class="skills-tablinks" onclick="openSkill(event, 'fishing')">Fishing</button>
+      <div class="skills-tab" id="skills-tab">
+        <button class="skills-tablinks" 
+          onclick="openSkill(event, 'mining')" 
+          id="default-open"
+          data-category="mining">
+          Mining
+        </button>
+        <button class="skills-tablinks" 
+          onclick="openSkill(event, 'woodcutting')"
+          data-category="woodcutting">
+          Woodcutting
+        </button>
+        <button class="skills-tablinks" 
+          onclick="openSkill(event, 'fishing')"
+          data-category="fishing">
+          Fishing
+        </button>
       </div>
       <div id="mining" class="skills-tabcontent">
         <div class="skills-button-container tooltip">

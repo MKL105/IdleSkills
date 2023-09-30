@@ -74,4 +74,5 @@ function finishMining(item, amount) {
     if (success) {
         logDrop(item, amount, 'mining');
     }
+    updateSkillTabStatus();
 }
