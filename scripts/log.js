@@ -62,12 +62,19 @@ function logLevelUp(category) {
   const categoryText = category.charAt(0).toUpperCase() + category.slice(1);
   const logText = '<p>' + getCurrentTime() + '&emsp;' + categoryText + ' Level Up!</p>';
   logBuffer.unshift(logText);
-    updateLog();
+  updateLog();
+}
+
+function logInfo(message) {
+  checkLogSize();
+  const logText = '<p>' + getCurrentTime() + '&emsp;' + message + '</p>';
+  logBuffer.unshift(logText);
+  updateLog();
 }
 
 function checkLogSize() {
     if (logBuffer.length >= logSize) {
-        logBuffer.pop();
+      logBuffer.pop();
     }
 }
 

@@ -21,8 +21,6 @@ const achievementsView = document.getElementById('achievements-view');
 const toggleInvButton = document.getElementById('toggle-inventory-button');
 const invBody = document.getElementById('inventory-body');
 
-//Initializes the UI once the window is fully loaded.
-window.onload = setupUI();
 function setupUI() {
     //Set up views
     gameView.style.display = 'block';

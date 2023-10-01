@@ -13,7 +13,7 @@
  */
 
 
-const inventory = [
+var inventory = [
     {
         id: "pebble",
         name: "Pebble",
@@ -56,7 +56,7 @@ const inventory = [
     }
 ];
 
-const miningData = [
+var miningData = [
     {
         id: "miningDataT1",
         tier: 1,
@@ -80,7 +80,7 @@ const miningData = [
     }
 ];
 
-const woodcuttingData = [
+var woodcuttingData = [
     {
         id: "woodcuttingDataT1",
         tier: 1,
@@ -97,7 +97,7 @@ const woodcuttingData = [
     }
 ];
 
-const fishingData = [
+var fishingData = [
     {
         id: "fishingDataT1",
         tier: 1,
@@ -114,7 +114,7 @@ const fishingData = [
     }
 ];
 
-const upgradeData = [
+var upgradeData = [
     {
         id: "pebbleInvUpgrade1",
         category: "pebbleInvUpgrade",
@@ -949,7 +949,7 @@ const upgradeData = [
     }
 ]
 
-const buttonStates = [
+var buttonStates = [
     {
         id: "mining-t1b1",
         active: false,
@@ -979,7 +979,7 @@ const buttonStates = [
     }
 ]
 
-const levelData = [
+var levelData = [
   {
     id: "player",
     level: 0,
@@ -1004,3 +1004,31 @@ const levelData = [
     maxLevel: 10
   }
 ]
+
+var originalInventory;
+var originalMiningData;
+var originalWoodcuttingData;
+var originalFishingData;
+var originalUpgradeData;
+var originalButtonStates;
+var originalLevelData;
+
+function storeResetData() {
+  originalInventory = inventory;
+  originalMiningData = miningData;
+  originalWoodcuttingData = woodcuttingData;
+  originalFishingData = fishingData;
+  originalUpgradeData = upgradeData;
+  originalButtonStates = buttonStates;
+  originalLevelData = levelData;
+}
+
+function resetAllData() {
+  inventory = originalInventory;
+  miningData = originalMiningData;
+  woodcuttingData = originalWoodcuttingData;
+  fishingData = originalFishingData;
+  upgradeData = originalUpgradeData;
+  buttonStates = originalButtonStates;
+  levelData = originalLevelData;
+}
