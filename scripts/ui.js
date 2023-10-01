@@ -60,6 +60,7 @@ function setupUI() {
     updateSkillButtonTooltipTexts()
     emptyLog();
     updateSkillTabStatus();
+    updateLevelUi();
 }
 
 //Displays and hides the inventory if the according button is clicked.
@@ -316,6 +317,23 @@ function updateSkillTabStatus() {
       if (availableButtons.length > 0) {
         skillButton.innerHTML += ' (!)';
       }
+    }
+  }
+}
+
+function updateLevelUi() {
+  for (data of levelData) {
+    const levelElem = document.getElementById(data.id + '-level-text');
+    const xpElem = document.getElementById(data.id + '-xp-text');
+    levelElem.innerHTML = 'Level ' + data.level + ':'
+    if (data.maxLevel == undefined) {
+      xpElem.innerHTML = '&emsp;' + data.xp + '/' + getNeededXp(data.id) + 'XP';
+    }
+    else if (data.maxLevel > data.level) {
+      xpElem.innerHTML = '&emsp;' + data.xp + '/' + getNeededXp(data.id) + 'XP';
+    }
+    else {
+      xpElem.innerHTML = '&emsp;MAX';
     }
   }
 }

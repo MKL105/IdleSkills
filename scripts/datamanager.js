@@ -20,7 +20,9 @@ const inventory = [
         rarity: "common",
         unlocked: true,
         amount: 0,
-        maxAmount: 10
+        maxAmount: 10,
+        xp: 1,
+        xpCategory: "mining"
     },
     {
         id: "square-pebble",
@@ -28,7 +30,9 @@ const inventory = [
         rarity: "rare",
         unlocked: true,
         amount: 0,
-        maxAmount: 3
+        maxAmount: 3,
+        xp: 3,
+        xpCategory: "mining"
     },
     {
         id: "stick",
@@ -36,7 +40,9 @@ const inventory = [
         rarity: "common",
         unlocked: true,
         amount: 0,
-        maxAmount: 10
+        maxAmount: 10,
+        xp: 1,
+        xpCategory: "woodcutting"
     },
     {
         id: "bait",
@@ -44,7 +50,9 @@ const inventory = [
         rarity: "common",
         unlocked: true,
         amount: 0,
-        maxAmount: 10
+        maxAmount: 10,
+        xp: 1,
+        xpCategory: "fishing"
     }
 ];
 
@@ -969,4 +977,30 @@ const buttonStates = [
         unlocked: true,
         data: fishingData[0]
     }
+]
+
+const levelData = [
+  {
+    id: "player",
+    level: 0,
+    xp: 0
+  },
+  {
+    id: "mining",
+    level: 0,
+    xp: 0,
+    maxLevel: 10
+  },
+  {
+    id: "fishing",
+    level: 0,
+    xp: 0,
+    maxLevel: 10
+  },
+  {
+    id: "woodcutting",
+    level: 0,
+    xp: 0,
+    maxLevel: 10
+  }
 ]

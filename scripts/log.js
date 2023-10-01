@@ -57,6 +57,14 @@ function logError(error) {
     updateLog();
 }
 
+function logLevelUp(category) {
+  checkLogSize();
+  const categoryText = category.charAt(0).toUpperCase() + category.slice(1);
+  const logText = '<p>' + getCurrentTime() + '&emsp;' + categoryText + ' Level Up!</p>';
+  logBuffer.unshift(logText);
+    updateLog();
+}
+
 function checkLogSize() {
     if (logBuffer.length >= logSize) {
         logBuffer.pop();

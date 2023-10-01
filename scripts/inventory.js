@@ -25,8 +25,17 @@ function addItem(id, amount) {
         logError('fullInventory');
         return false;
     }
-
-    (target.amount + amount >= target.maxAmount) ? target.amount = target.maxAmount : target.amount += amount;
+    if (target.amount + amount > target.maxAmount) {
+      const actualAmount = amount - ((target.amount + amount) - target.maxAmount);
+      addXp(target.xpCategory, actualAmount * target.xp);
+      addXp('player', Math.round(actualAmount * target.xp * playerLevelMultiplier));
+      target.amount = target.maxAmount;
+    }
+    else {
+      target.amount += amount;
+      addXp(target.xpCategory, amount * target.xp);
+      addXp('player', Math.round(amount * target.xp * playerLevelMultiplier));
+    }
     updateInventoryText(id);
     updateUpgradeTooltips();
     return true;
