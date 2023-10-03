@@ -292,3 +292,42 @@ hr.solid {
 .empty-table-row {
   height: 20px;
 }
+
+/* Dropdowns */
+.dropbtn {
+  background-color: white;
+  color: black;
+  padding: 5px;
+  font-size: 14px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: block;
+  margin-top: 5px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  z-index: 1;
+}
+
+.dropdown-content button {
+  color: black;
+  padding: 5px;
+  text-decoration: none;
+  font-size: 14px;
+  display: block;
+  border: none;
+}
+
+.dropdown-content button:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
