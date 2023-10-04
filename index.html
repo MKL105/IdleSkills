@@ -197,7 +197,15 @@
     <span class="topright"><button type="button" class="textbutton topright"
         onclick="closeAchievements()">&times;</button></span>
     <h1>Achievements</h1>
-    <h1>Coming soon!</h1>
+    <p id="achievement-unlocked-text">Unlocked: 0/100</p>
+    <div class="achievements-list" id="achievements-list">
+      <div class="achievement tooltip">
+        <span class="achievement-tooltip-text" id="achievement-tooltip-pebble-collector-1">Collect 1 Pebble.</span>
+        <div class="achievement-box-locked" id="achievement-box-pebble-collector-1">
+          Pebble Collector I
+        </div>
+      </div>
+    </div>
   </div>
   <script src="scripts/log.js"></script>
   <script src="scripts/mining.js"></script>
@@ -206,6 +214,7 @@
   <script src="scripts/leveling.js"></script>
   <script src="scripts/inventory.js"></script>
   <script src="scripts/upgrades.js"></script>
+  <script src="scripts/achievements.js"></script>
   <script src="scripts/datamanager.js"></script>
   <script src="scripts/saving.js"></script>
   <script src="scripts/ui.js"></script>

@@ -30,11 +30,13 @@ function addItem(id, amount) {
       addXp(target.xpCategory, actualAmount * target.xp);
       addXp('player', Math.round(actualAmount * target.xp * playerLevelMultiplier));
       target.amount = target.maxAmount;
+      progressCollection(id, actualAmount);
     }
     else {
       target.amount += amount;
       addXp(target.xpCategory, amount * target.xp);
       addXp('player', Math.round(amount * target.xp * playerLevelMultiplier));
+      progressCollection(id, amount);
     }
     updateInventoryText(id);
     updateUpgradeTooltips();

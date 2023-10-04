@@ -88,6 +88,7 @@ function openAchievements() {
     gameView.style.display = 'none';
     achievementsView.style.display = 'block';
     settingsView.style.display = 'none';
+    updateAchievements();
 }
 function closeAchievements() {
     gameView.style.display = 'block';
@@ -333,5 +334,38 @@ function updateLevelUi() {
     else {
       xpElem.innerHTML = '&emsp;MAX';
     }
+  }
+}
+
+function updateAchievements() {
+  const unlockedText = document.getElementById('achievement-unlocked-text');
+  unlockedText.innerHTML = "Unlocked: " + unlockedAchievementCount() + "/" + totalAchievementCount();
+
+  const elements = document.getElementsByClassName("achievement");
+  while(elements.length > 0){
+      elements[0].parentNode.removeChild(elements[0]);
+  }
+
+  for (achievement of achievementData) {
+    const container = document.createElement("div");
+    container.className = "achievement tooltip";
+    const tooltip = document.createElement("span");
+    tooltip.className = "achievement-tooltip-text";
+    tooltip.id = "achievement-tooltip-" + achievement.id;
+    tooltip.innerHTML = achievement.tooltip;
+    const graphic = document.createElement("div");
+    if (achievement.unlocked == true) {
+      graphic.className = "achievement-box-unlocked";
+    }
+    else {
+      graphic.className = "achievement-box-locked";
+    }
+    graphic.id = "achievement-box-" + achievement.id;
+    graphic.innerHTML = achievement.description;
+
+    container.appendChild(tooltip);
+    container.appendChild(graphic);
+    const parent = document.getElementById('achievements-list');
+    parent.appendChild(container);
   }
 }

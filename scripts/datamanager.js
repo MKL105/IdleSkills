@@ -1005,6 +1005,99 @@ var levelData = [
   }
 ]
 
+var achievementData = [
+  {
+    id: "pebble-collector-1",
+    description: "Pebble Collector 1",
+    tooltip: "Collect 1 Pebble",
+    progress: 0,
+    goal: 1,
+    unlocked: false,
+    category: "collection"
+  },
+  {
+    id: "pebble-collector-2",
+    description: "Pebble Collector 2",
+    tooltip: "Collect 50 Pebble",
+    progress: 0,
+    goal: 50,
+    unlocked: false,
+    category: "collection"
+  },
+  {
+    id: "pebble-collector-3",
+    description: "Pebble Collector 3",
+    tooltip: "Collect 500 Pebble",
+    progress: 0,
+    goal: 500,
+    unlocked: false,
+    category: "collection"
+  },
+  {
+    id: "pebble-collector-4",
+    description: "Pebble Collector 4",
+    tooltip: "Collect 1000 Pebble",
+    progress: 0,
+    goal: 1000,
+    unlocked: false,
+    category: "collection"
+  },
+  {
+    id: "pebble-collector-5",
+    description: "Pebble Collector 5",
+    tooltip: "Collect 5000 Pebble",
+    progress: 0,
+    goal: 5000,
+    unlocked: false,
+    category: "collection"
+  },
+  {
+    id: "stick-collector-1",
+    description: "Stick Collector 1",
+    tooltip: "Collect 1 Stick",
+    progress: 0,
+    goal: 1,
+    unlocked: false,
+    category: "collection"
+  },
+  {
+    id: "stick-collector-2",
+    description: "Stick Collector 2",
+    tooltip: "Collect 50 Stick",
+    progress: 0,
+    goal: 50,
+    unlocked: false,
+    category: "collection"
+  },
+  {
+    id: "stick-collector-3",
+    description: "Stick Collector 3",
+    tooltip: "Collect 500 Stick",
+    progress: 0,
+    goal: 500,
+    unlocked: false,
+    category: "collection"
+  },
+  {
+    id: "stick-collector-4",
+    description: "Stick Collector 4",
+    tooltip: "Collect 1000 Stick",
+    progress: 0,
+    goal: 1000,
+    unlocked: false,
+    category: "collection"
+  },
+  {
+    id: "stick-collector-5",
+    description: "Stick Collector 5",
+    tooltip: "Collect 5000 Stick",
+    progress: 0,
+    goal: 5000,
+    unlocked: false,
+    category: "collection"
+  }
+]
+
 var originalInventory;
 var originalMiningData;
 var originalWoodcuttingData;
@@ -1012,6 +1105,7 @@ var originalFishingData;
 var originalUpgradeData;
 var originalButtonStates;
 var originalLevelData;
+var originalAchievementData;
 
 function storeResetData() {
   originalInventory = inventory;
@@ -1021,6 +1115,7 @@ function storeResetData() {
   originalUpgradeData = upgradeData;
   originalButtonStates = buttonStates;
   originalLevelData = levelData;
+  originalAchievementData = achievementData;
 }
 
 function resetAllData() {
@@ -1031,4 +1126,5 @@ function resetAllData() {
   upgradeData = originalUpgradeData;
   buttonStates = originalButtonStates;
   levelData = originalLevelData;
+  achievementData = originalAchievementData;
 }

@@ -331,3 +331,55 @@ hr.solid {
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
+/* Achievements */
+.achievement {
+  display:inline-block;
+  text-align: left;
+  vertical-align: middle;
+  margin: 10px;
+}
+
+.achievement-box-locked {
+  width: 80px;
+  height: 80px;
+  border: 3px solid #666666;
+  background-color: #292828;
+  color: #666666;
+  border-radius: 5px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+
+.achievement-box-unlocked {
+  width: 80px;
+  height: 80px;
+  border: 3px solid #ccc;
+  background-color: #2c2c2c;
+  color: white;
+  border-radius: 5px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+
+.tooltip .achievement-tooltip-text {
+  visibility: hidden;
+  background-color: #1a1a1a;
+  color: white;
+  border: 1px solid #ccc;
+  text-align: center;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  width: 150px;
+  bottom: 90%;
+  left: 70%;
+  margin-left: -50px;
+  border-radius: 10px;
+}
+
+.tooltip:hover .achievement-tooltip-text {
+  visibility: visible;
+}

@@ -72,6 +72,13 @@ function logInfo(message) {
   updateLog();
 }
 
+function logAchievement(achievement){
+  checkLogSize();
+  const logText = "<p>" + getCurrentTime() + "&emsp;" + "Earned Achievement '" + achievement + "'</p>";
+  logBuffer.unshift(logText);
+  updateLog();
+}
+
 function checkLogSize() {
     if (logBuffer.length >= logSize) {
       logBuffer.pop();

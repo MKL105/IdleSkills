@@ -23,6 +23,7 @@ function saveDataToStorage() {
   localStorage.setItem('upgradeData', JSON.stringify(upgradeData));
   localStorage.setItem('buttonStates', JSON.stringify(buttonStates));
   localStorage.setItem('levelData', JSON.stringify(levelData));
+  localStorage.setItem('achievementData', JSON.stringify(achievementData));
 }
 
 function loadDataFromStorage() {
@@ -33,6 +34,7 @@ function loadDataFromStorage() {
   upgradeData = JSON.parse(localStorage.getItem('upgradeData'));
   buttonStates = JSON.parse(localStorage.getItem('buttonStates'));
   levelData = JSON.parse(localStorage.getItem('levelData'));
+  achievementData = JSON.parse(localStorage.getItem('achievementData'));
 }
 
 function startAutoSave() {
@@ -57,6 +59,7 @@ function resetData() {
   localStorage.removeItem('upgradeData');
   localStorage.removeItem('buttonStates');
   localStorage.removeItem('levelData');
+  localStorage.removeItem('achievementData');
   emptyLog();
   resetAllData();
   setupUI();
