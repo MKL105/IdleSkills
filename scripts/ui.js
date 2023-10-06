@@ -59,6 +59,7 @@ function setupUI() {
     emptyLog();
     updateSkillTabStatus();
     updateLevelUi();
+    setupInventory();
 }
 
 //Displays and hides the inventory if the according button is clicked.
@@ -158,11 +159,22 @@ function updateSkillButton(id) {
     button.disabled = stateData.active;
 }
 
+function setupInventory() {
+  const uniqueItems = (list, keyFn) => list.reduce((resultSet, item) =>
+    resultSet.add(typeof keyFn === 'string' ? item[keyFn] : keyFn(item)),
+  new Set).size;
+  const categories = [];
+  categories.length = uniqueItems(inventory, 'xpCategory');
+  while (categories.includes(undefined)) {
+    const test = inventory.find(x => categories.includes(x.xpCategory) == false);
+    categories.push(test.xpCategory);
+    categories.shift();
+    console.log(categories);
+  }
+}
+
 function updateInventoryText(id) {
-    var dataObject = inventory.find(obj => obj.id == id);
-    var text = dataObject.name + ': ' + dataObject.amount + '/' + dataObject.maxAmount;
-    var textElement = document.getElementById('inv-' + id);
-    textElement.innerHTML = text;
+    
 }
 
 function updateUpgradeButtons() {

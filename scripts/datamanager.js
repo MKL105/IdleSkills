@@ -14,46 +14,156 @@
 
 
 var inventory = [
-    {
-        id: "pebble",
-        name: "Pebble",
-        rarity: "common",
-        unlocked: true,
-        amount: 0,
-        maxAmount: 10,
-        xp: 1,
-        xpCategory: "mining"
-    },
-    {
-        id: "square-pebble",
-        name: "Square Pebble",
-        rarity: "rare",
-        unlocked: true,
-        amount: 0,
-        maxAmount: 3,
-        xp: 3,
-        xpCategory: "mining"
-    },
-    {
-        id: "stick",
-        name: "Stick",
-        rarity: "common",
-        unlocked: true,
-        amount: 0,
-        maxAmount: 10,
-        xp: 1,
-        xpCategory: "woodcutting"
-    },
-    {
-        id: "bait",
-        name : "Bait",
-        rarity: "common",
-        unlocked: true,
-        amount: 0,
-        maxAmount: 10,
-        xp: 1,
-        xpCategory: "fishing"
-    }
+  {
+    id: "pebble",
+    name: "Pebble",
+    rarity: "common",
+    unlocked: true,
+    amount: 0,
+    maxAmount: 10,
+    xp: 1,
+    xpCategory: "mining"
+  },
+  {
+    id: "flint",
+    name: "Flint",
+    rarity: "uncommon",
+    unlocked: true,
+    amount: 0,
+    maxAmount: 7,
+    xp: 2,
+    xpCategory: "mining"
+  },
+  {
+    id: "square-pebble",
+    name: "Square Pebble",
+    rarity: "rare",
+    unlocked: true,
+    amount: 0,
+    maxAmount: 3,
+    xp: 3,
+    xpCategory: "mining"
+  },
+  {
+    id: "rusty-nail",
+    name: "Rusty Nail",
+    rarity: "epic",
+    unlocked: true,
+    amount: 0,
+    maxAmount: 2,
+    xp: 6,
+    xpCategory: "mining"
+  },
+  {
+    id: "runestone",
+    name: "Runestone",
+    rarity: "legendary",
+    unlocked: true,
+    amount: 0,
+    maxAmount: 1,
+    xp: 10,
+    xpCategory: "mining"
+  },
+  {
+    id: "stick",
+    name: "Stick",
+    rarity: "common",
+    unlocked: true,
+    amount: 0,
+    maxAmount: 10,
+    xp: 1,
+    xpCategory: "woodcutting"
+  },
+  {
+    id: "leaf",
+    name: "Leaf",
+    rarity: "uncommon",
+    unlocked: true,
+    amount: 0,
+    maxAmount: 7,
+    xp: 2,
+    xpCategory: "woodcutting"
+  },
+  {
+    id: "bark",
+    name: "Bark",
+    rarity: "rare",
+    unlocked: true,
+    amount: 0,
+    maxAmount: 3,
+    xp: 3,
+    xpCategory: "woodcutting"
+  },
+  {
+    id: "firewood",
+    name: "Firewood",
+    rarity: "epic",
+    unlocked: true,
+    amount: 0,
+    maxAmount: 2,
+    xp: 6,
+    xpCategory: "woodcutting"
+  },
+  {
+    id: "root",
+    name: "Root",
+    rarity: "legendary",
+    unlocked: true,
+    amount: 0,
+    maxAmount: 1,
+    xp: 10,
+    xpCategory: "woodcutting"
+  },
+  {
+    id: "worm",
+    name: "Worm",
+    rarity: "common",
+    unlocked: true,
+    amount: 0,
+    maxAmount: 10,
+    xp: 1,
+    xpCategory: "fishing"
+  },
+  {
+    id: "larva",
+    name: "Larva",
+    rarity: "uncommon",
+    unlocked: true,
+    amount: 0,
+    maxAmount: 7,
+    xp: 2,
+    xpCategory: "fishing"
+  },
+  {
+    id: "beetle",
+    name: "Beetle",
+    rarity: "rare",
+    unlocked: true,
+    amount: 0,
+    maxAmount: 3,
+    xp: 3,
+    xpCategory: "fishing"
+  },
+  {
+    id: "butterfly",
+    name: "Butterfly",
+    rarity: "epic",
+    unlocked: true,
+    amount: 0,
+    maxAmount: 2,
+    xp: 6,
+    xpCategory: "fishing"
+  },
+  {
+    id: "dragonfly",
+    name: "Dragonfly",
+    rarity: "legendary",
+    unlocked: true,
+    amount: 0,
+    maxAmount: 1,
+    xp: 10,
+    xpCategory: "fishing"
+  }
 ];
 
 var miningData = [
