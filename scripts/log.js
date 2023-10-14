@@ -15,8 +15,9 @@
 const logBuffer = [];
 var logSize = 10;
 
-function logDrop(item, amount, source) {
+function logDrop(itemId, amount, source) {
     checkLogSize();
+    const item = getItemById(itemId);
     var itemText = '<div class="';
     switch (item.rarity) {
         case 'common':

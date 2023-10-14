@@ -51,7 +51,7 @@ function buyUpgrade(evt) {
   }
 
     for (req of upgrade.requirements) {
-        removeItem(req.item.id, req.amount);
+        removeItem(req.item, req.amount);
     }
 
     for (unlock of upgrade.unlocksUpgrades) {
@@ -66,7 +66,7 @@ function updateUpgradeData() {
     if (upgrade.available == true) {
       var unlock = true;
       for (req of upgrade.requirements) {
-          if (req.item.amount < req.amount) {
+          if (getItemById(req.item).amount < req.amount) {
             unlock = false;
           }
       }

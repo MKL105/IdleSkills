@@ -252,11 +252,9 @@ function createUpgradeButton(upgrade) {
 }
 
 function updateUpgradeTooltips() {
-  console.log("updating upgrade tooltips");
   updateUpgradeData();
   for (upgrade of upgradeData) {
     if (upgrade.available == true) {
-      console.log(upgrade.title);
       const tooltip = document.getElementById('tooltip-text-' + upgrade.id);
       var text = '';
       switch (upgrade.category) {
@@ -278,12 +276,12 @@ function updateUpgradeTooltips() {
         default: break;
       }
       for (req of upgrade.requirements) {
-        console.log(req);
-        if (req.item.amount >= req.amount) {
-          text += '<div class="enough">' + getItemById(req.item.id).name + ' ' + req.item.amount + '/' + req.amount + '</div>' + '<br/>';
+        const item = getItemById(req.item);
+        if (item.amount >= req.amount) {
+          text += '<div class="enough">' + item.name + ' ' + item.amount + '/' + req.amount + '</div>' + '<br/>';
         }
         else {
-          text += '<div class="not-enough">' + getItemById(req.item.id).name +' ' + req.item.amount + '/' + req.amount + '</div>' + '<br/>';
+          text += '<div class="not-enough">' + item.name +' ' + item.amount + '/' + req.amount + '</div>' + '<br/>';
         }
       }
       tooltip.innerHTML = text;
@@ -323,14 +321,28 @@ function updateSkillButtonTooltipTexts() {
     if (buttonState.unlocked == true) {
       const tooltipText = document.getElementById('tooltip-text-' + buttonState.id);
       var text = 'Drops: <br/>';
-      for (drop of buttonState.data.drops) {
+      var data = {};
+      switch (buttonState.data) {
+        case "miningData":
+          data = miningData[buttonState.dataIndex];
+          break;
+        case "woodcuttingData":
+          data = woodcuttingData[buttonState.dataIndex];
+          break;
+        case "fishingData":
+        data = fishingData[buttonState.dataIndex];
+        break;
+        default: break;
+      }
+
+      for (drop of data.drops) {
         var amountText = '';
         amountText += drop.baseDrop;
         if (drop.bonusDropChance > 0) {
           var max = drop.baseDrop + drop.bonusDrop;
           amountText += "-" + max;
         }
-        switch (drop.item.rarity) {
+        switch (getItemById(drop.item).rarity) {
           case 'common':
             text += '<div class="common">'
             break;
@@ -348,7 +360,7 @@ function updateSkillButtonTooltipTexts() {
             break;
           default: break;
         }
-        text += amountText + ' ' + drop.item.name + ': ' + drop.dropChance + '% </div><br/>';
+        text += amountText + ' ' + getItemById(drop.item).name + ': ' + drop.dropChance + '% </div><br/>';
       }
       tooltipText.innerHTML = text;
     }

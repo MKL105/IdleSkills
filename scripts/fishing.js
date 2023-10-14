@@ -70,7 +70,7 @@ function calculateFishingDrops(buttonId) {
 }
 
 function finishFishing(item, amount) {
-    var success = addItem(item.id, amount);
+    var success = addItem(item, amount);
     if (success) {
         logDrop(item, amount, 'fishing');
     }

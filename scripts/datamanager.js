@@ -167,61 +167,61 @@ var inventory = [
 ];
 
 var miningData = [
-    {
-        id: "miningDataT1",
-        tier: 1,
-        baseTime: 5,
-        drops: [
-            {
-                item: getItemById("pebble"),
-                baseDrop: 2,
-                dropChance: 100,
-                bonusDrop: 1,
-                bonusDropChance: 20
-            },
-            {
-                item: getItemById("square-pebble"),
-                baseDrop: 1,
-                dropChance: 10,
-                bonusDrop: 1,
-                bonusDropChance: 0
-            }
-        ]
-    }
+  {
+    id: "miningDataT1",
+    tier: 1,
+    baseTime: 5,
+    drops: [
+      {
+        item: "pebble",
+        baseDrop: 2,
+        dropChance: 100,
+        bonusDrop: 1,
+        bonusDropChance: 20
+      },
+      {
+        item: "square-pebble",
+        baseDrop: 1,
+        dropChance: 10,
+        bonusDrop: 1,
+        bonusDropChance: 0
+      }
+    ]
+  }
 ];
 
 var woodcuttingData = [
-    {
-        id: "woodcuttingDataT1",
-        tier: 1,
-        baseTime: 10,
-        drops: [
-            {
-                item: getItemById("stick"),
-                baseDrop: 3,
-                dropChance: 100,
-                bonusDrop: 2,
-                bonusDropChance: 15
-            }
-        ]
-    }
+  {
+    id: "woodcuttingDataT1",
+    tier: 1,
+    baseTime: 10,
+    drops: [
+      {
+        item: "stick",
+        baseDrop: 3,
+        dropChance: 100,
+        bonusDrop: 2,
+        bonusDropChance: 15
+      }
+    ]
+  }
 ];
 
 var fishingData = [
-    {
-        id: "fishingDataT1",
-        tier: 1,
-        baseTime: 7,
-        drops: [
-            {
-                item: getItemById("worm"),
-                baseDrop: 2,
-                dropChance: 100,
-                bonusDrop: 1,
-                bonusDropChance: 40
-            }
-        ]
-    }
+  {
+    id: "fishingDataT1",
+    tier: 1,
+    baseTime: 7,
+    drops: [
+      {
+        item: "worm",
+        baseDrop: 2,
+        dropChance: 100,
+        bonusDrop: 1,
+        bonusDropChance: 40
+      }
+    ]
+  }
 ];
 
 var upgradeData = [
@@ -238,7 +238,7 @@ var upgradeData = [
         ],
         requirements: [
             {
-                item: getItemById("pebble"),
+                item: "pebble",
                 amount: pebbleInvMaxProgression[0]
             }
         ]
@@ -256,7 +256,7 @@ var upgradeData = [
         ],
         requirements: [
             {
-                item: getItemById("pebble"),
+                item: "pebble",
                 amount: pebbleInvMaxProgression[1]
             }
         ]
@@ -274,7 +274,7 @@ var upgradeData = [
         ],
         requirements: [
             {
-                item: getItemById("pebble"),
+                item: "pebble",
                 amount: pebbleInvMaxProgression[2]
             }
         ]
@@ -292,7 +292,7 @@ var upgradeData = [
         ],
         requirements: [
             {
-                item: getItemById("pebble"),
+                item: "pebble",
                 amount: pebbleInvMaxProgression[3]
             }
         ]
@@ -310,7 +310,7 @@ var upgradeData = [
         ],
         requirements: [
             {
-                item: getItemById("pebble"),
+                item: "pebble",
                 amount: pebbleInvMaxProgression[4]
             }
         ]
@@ -328,7 +328,7 @@ var upgradeData = [
         ],
         requirements: [
             {
-                item: getItemById("pebble"),
+                item: "pebble",
                 amount: pebbleInvMaxProgression[5]
             }
         ]
@@ -346,7 +346,7 @@ var upgradeData = [
         ],
         requirements: [
             {
-                item: getItemById("pebble"),
+                item: "pebble",
                 amount: pebbleInvMaxProgression[6]
             }
         ]
@@ -364,7 +364,7 @@ var upgradeData = [
         ],
         requirements: [
             {
-                item: getItemById("pebble"),
+                item: "pebble",
                 amount: pebbleInvMaxProgression[7]
             }
         ]
@@ -382,7 +382,7 @@ var upgradeData = [
         ],
         requirements: [
             {
-                item: getItemById("pebble"),
+                item: "pebble",
                 amount: pebbleInvMaxProgression[8]
             }
         ]
@@ -400,7 +400,7 @@ var upgradeData = [
         ],
         requirements: [
             {
-                item: getItemById("pebble"),
+                item: "pebble",
                 amount: pebbleInvMaxProgression[9]
             }
         ]
@@ -418,7 +418,7 @@ var upgradeData = [
         ],
         requirements: [
             {
-                item: getItemById("pebble"),
+                item: "pebble",
                 amount: pebbleInvMaxProgression[10]
             }
         ]
@@ -436,7 +436,7 @@ var upgradeData = [
         ],
         requirements: [
             {
-                item: getItemById("pebble"),
+                item: "pebble",
                 amount: pebbleInvMaxProgression[11]
             }
         ]
@@ -454,7 +454,7 @@ var upgradeData = [
         ],
         requirements: [
             {
-                item: getItemById("pebble"),
+                item: "pebble",
                 amount: pebbleInvMaxProgression[12]
             }
         ]
@@ -472,11 +472,11 @@ var upgradeData = [
         ],
         requirements: [
             {
-                item: getItemById("pebble"),
+                item: "pebble",
                 amount: 100
             },
             {
-                item: getItemById("square-pebble"),
+                item: "square-pebble",
                 amount: 10
             }
         ]
@@ -494,7 +494,7 @@ var upgradeData = [
         ],
         requirements: [
             {
-                item: getItemById("stick"),
+                item: "stick",
                 amount: stickInvMaxProgression[0]
             }
         ]
@@ -512,7 +512,7 @@ var upgradeData = [
         ],
         requirements: [
             {
-                item: getItemById("stick"),
+                item: "stick",
                 amount: stickInvMaxProgression[1]
             }
         ]
@@ -530,7 +530,7 @@ var upgradeData = [
         ],
         requirements: [
             {
-                item: getItemById("stick"),
+                item: "stick",
                 amount: stickInvMaxProgression[2]
             }
         ]
@@ -548,7 +548,7 @@ var upgradeData = [
         ],
         requirements: [
             {
-                item: getItemById("stick"),
+                item: "stick",
                 amount: stickInvMaxProgression[3]
             }
         ]
@@ -566,7 +566,7 @@ var upgradeData = [
         ],
         requirements: [
             {
-                item: getItemById("stick"),
+                item: "stick",
                 amount: stickInvMaxProgression[4]
             }
         ]
@@ -584,7 +584,7 @@ var upgradeData = [
         ],
         requirements: [
             {
-                item: getItemById("stick"),
+                item: "stick",
                 amount: stickInvMaxProgression[5]
             }
         ]
@@ -602,7 +602,7 @@ var upgradeData = [
         ],
         requirements: [
             {
-                item: getItemById("stick"),
+                item: "stick",
                 amount: stickInvMaxProgression[6]
             }
         ]
@@ -620,7 +620,7 @@ var upgradeData = [
         ],
         requirements: [
             {
-                item: getItemById("stick"),
+                item: "stick",
                 amount: stickInvMaxProgression[7]
             }
         ]
@@ -638,7 +638,7 @@ var upgradeData = [
         ],
         requirements: [
             {
-                item: getItemById("stick"),
+                item: "stick",
                 amount: stickInvMaxProgression[8]
             }
         ]
@@ -656,7 +656,7 @@ var upgradeData = [
         ],
         requirements: [
             {
-                item: getItemById("stick"),
+                item: "stick",
                 amount: stickInvMaxProgression[9]
             }
         ]
@@ -674,7 +674,7 @@ var upgradeData = [
         ],
         requirements: [
             {
-                item: getItemById("stick"),
+                item: "stick",
                 amount: stickInvMaxProgression[10]
             }
         ]
@@ -692,7 +692,7 @@ var upgradeData = [
         ],
         requirements: [
             {
-                item: getItemById("stick"),
+                item: "stick",
                 amount: stickInvMaxProgression[11]
             }
         ]
@@ -710,7 +710,7 @@ var upgradeData = [
         ],
         requirements: [
             {
-                item: getItemById("stick"),
+                item: "stick",
                 amount: stickInvMaxProgression[12]
             }
         ]
@@ -728,7 +728,7 @@ var upgradeData = [
         ],
         requirements: [
             {
-                item: getItemById("square-pebble"),
+                item: "square-pebble",
                 amount: squarePebbleInvMaxProgression[0]
             }
         ]
@@ -746,7 +746,7 @@ var upgradeData = [
         ],
         requirements: [
             {
-                item: getItemById("square-pebble"),
+                item: "square-pebble",
                 amount: squarePebbleInvMaxProgression[1]
             }
         ]
@@ -764,7 +764,7 @@ var upgradeData = [
         ],
         requirements: [
             {
-                item: getItemById("square-pebble"),
+                item: "square-pebble",
                 amount: squarePebbleInvMaxProgression[2]
             }
         ]
@@ -782,7 +782,7 @@ var upgradeData = [
         ],
         requirements: [
             {
-                item: getItemById("square-pebble"),
+                item: "square-pebble",
                 amount: squarePebbleInvMaxProgression[3]
             }
         ]
@@ -800,7 +800,7 @@ var upgradeData = [
         ],
         requirements: [
             {
-                item: getItemById("square-pebble"),
+                item: "square-pebble",
                 amount: squarePebbleInvMaxProgression[4]
             }
         ]
@@ -818,7 +818,7 @@ var upgradeData = [
         ],
         requirements: [
             {
-                item: getItemById("square-pebble"),
+                item: "square-pebble",
                 amount: squarePebbleInvMaxProgression[5]
             }
         ]
@@ -836,7 +836,7 @@ var upgradeData = [
         ],
         requirements: [
             {
-                item: getItemById("worm"),
+                item: "worm",
                 amount: wormInvMaxProgression[0]
             }
         ]
@@ -854,7 +854,7 @@ var upgradeData = [
         ],
         requirements: [
             {
-                item: getItemById("worm"),
+                item: "worm",
                 amount: wormInvMaxProgression[1]
             }
         ]
@@ -872,7 +872,7 @@ var upgradeData = [
         ],
         requirements: [
             {
-                item: getItemById("worm"),
+                item: "worm",
                 amount: wormInvMaxProgression[2]
             }
         ]
@@ -890,7 +890,7 @@ var upgradeData = [
         ],
         requirements: [
             {
-                item: getItemById("worm"),
+                item: "worm",
                 amount: wormInvMaxProgression[3]
             }
         ]
@@ -908,7 +908,7 @@ var upgradeData = [
         ],
         requirements: [
             {
-                item: getItemById("worm"),
+                item: "worm",
                 amount: wormInvMaxProgression[4]
             }
         ]
@@ -926,7 +926,7 @@ var upgradeData = [
         ],
         requirements: [
             {
-                item: getItemById("worm"),
+                item: "worm",
                 amount: wormInvMaxProgression[5]
             }
         ]
@@ -944,7 +944,7 @@ var upgradeData = [
         ],
         requirements: [
             {
-                item: getItemById("worm"),
+                item: "worm",
                 amount: wormInvMaxProgression[6]
             }
         ]
@@ -962,7 +962,7 @@ var upgradeData = [
         ],
         requirements: [
             {
-                item: getItemById("worm"),
+                item: "worm",
                 amount: wormInvMaxProgression[7]
             }
         ]
@@ -980,7 +980,7 @@ var upgradeData = [
         ],
         requirements: [
             {
-                item: getItemById("worm"),
+                item: "worm",
                 amount: wormInvMaxProgression[8]
             }
         ]
@@ -998,7 +998,7 @@ var upgradeData = [
         ],
         requirements: [
             {
-                item: getItemById("worm"),
+                item: "worm",
                 amount: wormInvMaxProgression[9]
             }
         ]
@@ -1016,7 +1016,7 @@ var upgradeData = [
         ],
         requirements: [
             {
-                item: getItemById("worm"),
+                item: "worm",
                 amount: wormInvMaxProgression[10]
             }
         ]
@@ -1034,7 +1034,7 @@ var upgradeData = [
         ],
         requirements: [
             {
-                item: getItemById("worm"),
+                item: "worm",
                 amount: wormInvMaxProgression[11]
             }
         ]
@@ -1052,7 +1052,7 @@ var upgradeData = [
         ],
         requirements: [
             {
-                item: getItemById("worm"),
+                item: "worm",
                 amount: wormInvMaxProgression[12]
             }
         ]
@@ -1067,7 +1067,8 @@ var buttonStates = [
         category: "mining",
         tier: 1,
         unlocked: true,
-        data: miningData[0]
+        data: "miningData",
+        dataIndex: 0
     },
     {
         id: "woodcutting-t1b1",
@@ -1076,7 +1077,8 @@ var buttonStates = [
         category: "woodcutting",
         tier: 1,
         unlocked: true,
-        data: woodcuttingData[0]
+        data: "woodcuttingData",
+        dataIndex: 0
     },
     {
         id: "fishing-t1b1",
@@ -1085,7 +1087,8 @@ var buttonStates = [
         category: "fishing",
         tier: 1,
         unlocked: true,
-        data: fishingData[0]
+        data: "fishingData",
+        dataIndex: 0
     }
 ]
 

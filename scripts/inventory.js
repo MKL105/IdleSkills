@@ -13,47 +13,46 @@
  */
 
 function getItemById(id) {
-    return inventory.find(item => item.id === id);
+  return inventory.find(item => item.id === id);
 }
 
 function addItem(id, amount) {
-    var target = {};
-
-    target = inventory.find(item => item.id === id);
-
-    if (target.amount == target.maxAmount) {
-        logError('fullInventory');
-        return false;
-    }
-    if (target.amount + amount > target.maxAmount) {
-      const actualAmount = amount - ((target.amount + amount) - target.maxAmount);
-      addXp(target.xpCategory, actualAmount * target.xp);
-      addXp('player', Math.round(actualAmount * target.xp * playerLevelMultiplier));
-      target.amount = target.maxAmount;
-      progressCollection(id, actualAmount);
-    }
-    else {
-      target.amount += amount;
-      addXp(target.xpCategory, amount * target.xp);
-      addXp('player', Math.round(amount * target.xp * playerLevelMultiplier));
-      progressCollection(id, amount);
-    }
-    console.log("added new item: " + target.name + ", amount: " + target.amount);
-    updateInventoryText(id);
-    updateUpgradeTooltips();
-    return true;
+  var target = {};
+  console.log(id + ": " + amount); 
+  target = inventory.find(item => item.id === id);
+  if (target.amount == target.maxAmount) {
+    logError('fullInventory');
+    return false;
+  }
+  if (target.amount + amount > target.maxAmount) {
+    const actualAmount = amount - ((target.amount + amount) - target.maxAmount);
+    addXp(target.xpCategory, actualAmount * target.xp);
+    addXp('player', Math.round(actualAmount * target.xp * playerLevelMultiplier));
+    target.amount = target.maxAmount;
+    progressCollection(id, actualAmount);
+  }
+  else {
+    target.amount += amount;
+    addXp(target.xpCategory, amount * target.xp);
+    addXp('player', Math.round(amount * target.xp * playerLevelMultiplier));
+    progressCollection(id, amount);
+  }
+  updateInventoryText(id);
+  updateUpgradeTooltips();
+  return true;
 }
 
 function removeItem(id, amount) {
-    var target = inventory.find(item => item.id == id);
-    if (target === undefined) {
-        return false;
-    }
-    if (target.amount - amount < 0) {
-        return false;
-    }
-    target.amount -= amount;
-    updateInventoryText(id);
-    updateUpgradeTooltips();
-    return true;
+  var target = inventory.find(item => item.id == id);
+  if (target === undefined) {
+    return false;
+  }
+  if (target.amount - amount < 0) {
+    return false;
+  }
+  target.amount -= amount;
+  console.log("removed item: " + target);
+  updateInventoryText(id);
+  updateUpgradeTooltips();
+  return true;
 }

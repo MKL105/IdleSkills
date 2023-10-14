@@ -70,7 +70,7 @@ function calculateWoodcuttingDrops(buttonId) {
 }
 
 function finishWoodcutting(item, amount) {
-    var success = addItem(item.id, amount);
+    var success = addItem(item, amount);
     if (success) {
         logDrop(item, amount, 'woodcutting');
     }
