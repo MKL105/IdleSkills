@@ -92,7 +92,6 @@ function checkAchievements() {
 }
 
 function progressCollection(collection, amount) {
-  console.log(typeof(achievementData.category));
   const collections = achievementData.filter(achievement => achievement.category == 'collection');
   const searchPrompt = collection + '-collector';
   const filteredCollection = collections.filter(achievement => achievement.id.includes(searchPrompt));

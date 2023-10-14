@@ -214,7 +214,7 @@ var fishingData = [
         baseTime: 7,
         drops: [
             {
-                item: getItemById("bait"),
+                item: getItemById("worm"),
                 baseDrop: 2,
                 dropChance: 100,
                 bonusDrop: 1,
@@ -824,226 +824,226 @@ var upgradeData = [
         ]
     },
     {
-        id: "baitInvUpgrade1",
-        category: "baitInvUpgrade",
-        title: "Bait Inventory Upgrade 1",
-        description: "Increases the bait inventory size to ",
+        id: "wormInvUpgrade1",
+        category: "wormInvUpgrade",
+        title: "Worm Inventory Upgrade 1",
+        description: "Increases the worm inventory size to ",
         upgradeNumber: 1,
         available: true,
         unlockable: false,
         unlocksUpgrades: [
-            "baitInvUpgrade2"
+            "wormInvUpgrade2"
         ],
         requirements: [
             {
-                item: getItemById("bait"),
-                amount: baitInvMaxProgression[0]
+                item: getItemById("worm"),
+                amount: wormInvMaxProgression[0]
             }
         ]
     },
     {
-        id: "baitInvUpgrade2",
-        category: "baitInvUpgrade",
-        title: "Bait Inventory Upgrade 2",
-        description: "Increases the bait inventory size to ",
+        id: "wormInvUpgrade2",
+        category: "wormInvUpgrade",
+        title: "Worm Inventory Upgrade 2",
+        description: "Increases the worm inventory size to ",
         upgradeNumber: 2,
         available: false,
         unlockable: false,
         unlocksUpgrades: [
-            "baitInvUpgrade3"
+            "wormInvUpgrade3"
         ],
         requirements: [
             {
-                item: getItemById("bait"),
-                amount: baitInvMaxProgression[1]
+                item: getItemById("worm"),
+                amount: wormInvMaxProgression[1]
             }
         ]
     },
     {
-        id: "baitInvUpgrade3",
-        category: "baitInvUpgrade",
-        title: "Bait Inventory Upgrade 3",
-        description: "Increases the bait inventory size to ",
+        id: "wormInvUpgrade3",
+        category: "wormInvUpgrade",
+        title: "Worm Inventory Upgrade 3",
+        description: "Increases the worm inventory size to ",
         upgradeNumber: 3,
         available: false,
         unlockable: false,
         unlocksUpgrades: [
-            "baitInvUpgrade4"
+            "wormInvUpgrade4"
         ],
         requirements: [
             {
-                item: getItemById("bait"),
-                amount: baitInvMaxProgression[2]
+                item: getItemById("worm"),
+                amount: wormInvMaxProgression[2]
             }
         ]
     },
     {
-        id: "baitInvUpgrade4",
-        category: "baitInvUpgrade",
-        title: "Bait Inventory Upgrade 4",
-        description: "Increases the bait inventory size to ",
+        id: "wormInvUpgrade4",
+        category: "wormInvUpgrade",
+        title: "Worm Inventory Upgrade 4",
+        description: "Increases the worm inventory size to ",
         upgradeNumber: 4,
         available: false,
         unlockable: false,
         unlocksUpgrades: [
-            "baitInvUpgrade5"
+            "wormInvUpgrade5"
         ],
         requirements: [
             {
-                item: getItemById("bait"),
-                amount: baitInvMaxProgression[3]
+                item: getItemById("worm"),
+                amount: wormInvMaxProgression[3]
             }
         ]
     },
     {
-        id: "baitInvUpgrade5",
-        category: "baitInvUpgrade",
-        title: "Bait Inventory Upgrade 5",
-        description: "Increases the bait inventory size to ",
+        id: "wormInvUpgrade5",
+        category: "wormInvUpgrade",
+        title: "Worm Inventory Upgrade 5",
+        description: "Increases the worm inventory size to ",
         upgradeNumber: 5,
         available: false,
         unlockable: false,
         unlocksUpgrades: [
-            "baitInvUpgrade6"
+            "wormInvUpgrade6"
         ],
         requirements: [
             {
-                item: getItemById("bait"),
-                amount: baitInvMaxProgression[4]
+                item: getItemById("worm"),
+                amount: wormInvMaxProgression[4]
             }
         ]
     },
     {
-        id: "baitInvUpgrade6",
-        category: "baitInvUpgrade",
-        title: "Bait Inventory Upgrade 6",
-        description: "Increases the bait inventory size to ",
+        id: "wormInvUpgrade6",
+        category: "wormInvUpgrade",
+        title: "Worm Inventory Upgrade 6",
+        description: "Increases the worm inventory size to ",
         upgradeNumber: 6,
         available: false,
         unlockable: false,
         unlocksUpgrades: [
-            "baitInvUpgrade7"
+            "wormInvUpgrade7"
         ],
         requirements: [
             {
-                item: getItemById("bait"),
-                amount: baitInvMaxProgression[5]
+                item: getItemById("worm"),
+                amount: wormInvMaxProgression[5]
             }
         ]
     },
     {
-        id: "baitInvUpgrade7",
-        category: "baitInvUpgrade",
-        title: "Bait Inventory Upgrade 7",
-        description: "Increases the bait inventory size to ",
+        id: "wormInvUpgrade7",
+        category: "wormInvUpgrade",
+        title: "Worm Inventory Upgrade 7",
+        description: "Increases the worm inventory size to ",
         upgradeNumber: 7,
         available: false,
         unlockable: false,
         unlocksUpgrades: [
-            "baitInvUpgrade8"
+            "wormInvUpgrade8"
         ],
         requirements: [
             {
-                item: getItemById("bait"),
-                amount: baitInvMaxProgression[6]
+                item: getItemById("worm"),
+                amount: wormInvMaxProgression[6]
             }
         ]
     },
     {
-        id: "baitInvUpgrade8",
-        category: "baitInvUpgrade",
-        title: "Bait Inventory Upgrade 8",
-        description: "Increases the bait inventory size to ",
+        id: "wormInvUpgrade8",
+        category: "wormInvUpgrade",
+        title: "Worm Inventory Upgrade 8",
+        description: "Increases the worm inventory size to ",
         upgradeNumber: 8,
         available: false,
         unlockable: false,
         unlocksUpgrades: [
-            "baitInvUpgrade9"
+            "wormInvUpgrade9"
         ],
         requirements: [
             {
-                item: getItemById("bait"),
-                amount: baitInvMaxProgression[7]
+                item: getItemById("worm"),
+                amount: wormInvMaxProgression[7]
             }
         ]
     },
     {
-        id: "baitInvUpgrade9",
-        category: "baitInvUpgrade",
-        title: "Bait Inventory Upgrade 9",
-        description: "Increases the bait inventory size to ",
+        id: "wormInvUpgrade9",
+        category: "wormInvUpgrade",
+        title: "Worm Inventory Upgrade 9",
+        description: "Increases the worm inventory size to ",
         upgradeNumber: 9,
         available: false,
         unlockable: false,
         unlocksUpgrades: [
-            "baitInvUpgrade10"
+            "wormInvUpgrade10"
         ],
         requirements: [
             {
-                item: getItemById("bait"),
-                amount: baitInvMaxProgression[8]
+                item: getItemById("worm"),
+                amount: wormInvMaxProgression[8]
             }
         ]
     },
     {
-        id: "baitInvUpgrade10",
-        category: "baitInvUpgrade",
-        title: "Bait Inventory Upgrade 10",
-        description: "Increases the bait inventory size to ",
+        id: "wormInvUpgrade10",
+        category: "wormInvUpgrade",
+        title: "Worm Inventory Upgrade 10",
+        description: "Increases the worm inventory size to ",
         upgradeNumber: 10,
         available: false,
         unlockable: false,
         unlocksUpgrades: [
-            "baitInvUpgrade11"
+            "wormInvUpgrade11"
         ],
         requirements: [
             {
-                item: getItemById("bait"),
-                amount: baitInvMaxProgression[9]
+                item: getItemById("worm"),
+                amount: wormInvMaxProgression[9]
             }
         ]
     },
     {
-        id: "baitInvUpgrade11",
-        category: "baitInvUpgrade",
-        title: "Bait Inventory Upgrade 11",
-        description: "Increases the bait inventory size to ",
+        id: "wormInvUpgrade11",
+        category: "wormInvUpgrade",
+        title: "Worm Inventory Upgrade 11",
+        description: "Increases the worm inventory size to ",
         upgradeNumber: 11,
         available: false,
         unlockable: false,
         unlocksUpgrades: [
-            "baitInvUpgrade12"
+            "wormInvUpgrade12"
         ],
         requirements: [
             {
-                item: getItemById("bait"),
-                amount: baitInvMaxProgression[10]
+                item: getItemById("worm"),
+                amount: wormInvMaxProgression[10]
             }
         ]
     },
     {
-        id: "baitInvUpgrade12",
-        category: "baitInvUpgrade",
-        title: "Bait Inventory Upgrade 12",
-        description: "Increases the bait inventory size to ",
+        id: "wormInvUpgrade12",
+        category: "wormInvUpgrade",
+        title: "Worm Inventory Upgrade 12",
+        description: "Increases the worm inventory size to ",
         upgradeNumber: 12,
         available: false,
         unlockable: false,
         unlocksUpgrades: [
-            "baitInvUpgrade13"
+            "wormInvUpgrade13"
         ],
         requirements: [
             {
-                item: getItemById("bait"),
-                amount: baitInvMaxProgression[11]
+                item: getItemById("worm"),
+                amount: wormInvMaxProgression[11]
             }
         ]
     },
     {
-        id: "baitInvUpgrade13",
-        category: "baitInvUpgrade",
-        title: "Bait Inventory Upgrade 13",
-        description: "Increases the bait inventory size to ",
+        id: "wormInvUpgrade13",
+        category: "wormInvUpgrade",
+        title: "Worm Inventory Upgrade 13",
+        description: "Increases the worm inventory size to ",
         upgradeNumber: 13,
         available: false,
         unlockable: false,
@@ -1052,8 +1052,8 @@ var upgradeData = [
         ],
         requirements: [
             {
-                item: getItemById("bait"),
-                amount: baitInvMaxProgression[12]
+                item: getItemById("worm"),
+                amount: wormInvMaxProgression[12]
             }
         ]
     }

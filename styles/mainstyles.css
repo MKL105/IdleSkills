@@ -383,3 +383,8 @@ hr.solid {
 .tooltip:hover .achievement-tooltip-text {
   visibility: visible;
 }
+
+/* Inventory */
+.table-data-amount {
+  width: 20%;
+}
