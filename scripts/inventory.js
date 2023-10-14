@@ -38,6 +38,7 @@ function addItem(id, amount) {
       addXp('player', Math.round(amount * target.xp * playerLevelMultiplier));
       progressCollection(id, amount);
     }
+    console.log("added new item: " + target.name + ", amount: " + target.amount);
     updateInventoryText(id);
     updateUpgradeTooltips();
     return true;

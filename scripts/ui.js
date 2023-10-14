@@ -160,6 +160,8 @@ function updateSkillButton(id) {
 }
 
 function setupInventory() {
+  const table = document.getElementById("inventory-table");
+  table.innerHTML = "";
   const uniqueItems = (list, keyFn) => list.reduce((resultSet, item) =>
     resultSet.add(typeof keyFn === 'string' ? item[keyFn] : keyFn(item)),
   new Set).size;
@@ -200,7 +202,6 @@ function setupInventory() {
       index++;
     }
   }
-  const table = document.getElementById("inventory-table");
   for (row of tableRows) {
     table.appendChild(row);
   }
@@ -251,9 +252,11 @@ function createUpgradeButton(upgrade) {
 }
 
 function updateUpgradeTooltips() {
+  console.log("updating upgrade tooltips");
   updateUpgradeData();
   for (upgrade of upgradeData) {
     if (upgrade.available == true) {
+      console.log(upgrade.title);
       const tooltip = document.getElementById('tooltip-text-' + upgrade.id);
       var text = '';
       switch (upgrade.category) {
@@ -275,6 +278,7 @@ function updateUpgradeTooltips() {
         default: break;
       }
       for (req of upgrade.requirements) {
+        console.log(req);
         if (req.item.amount >= req.amount) {
           text += '<div class="enough">' + getItemById(req.item.id).name + ' ' + req.item.amount + '/' + req.amount + '</div>' + '<br/>';
         }
