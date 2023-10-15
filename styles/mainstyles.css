@@ -301,20 +301,17 @@ hr.solid {
   font-size: 14px;
   border: none;
 }
-
 .dropdown {
   position: relative;
   display: block;
   margin-top: 5px;
 }
-
 .dropdown-content {
   display: none;
   position: absolute;
   background-color: #f1f1f1;
   z-index: 1;
 }
-
 .dropdown-content button {
   color: black;
   padding: 5px;
@@ -323,11 +320,9 @@ hr.solid {
   display: block;
   border: none;
 }
-
 .dropdown-content button:hover {
   background-color: #ddd;
 }
-
 .dropdown:hover .dropdown-content {
   display: block;
 }
@@ -339,7 +334,6 @@ hr.solid {
   vertical-align: middle;
   margin: 10px;
 }
-
 .achievement-box-locked {
   width: 80px;
   height: 80px;
@@ -351,7 +345,6 @@ hr.solid {
   display: flex;
   align-items: center;
 }
-
 .achievement-box-unlocked {
   width: 80px;
   height: 80px;
@@ -363,7 +356,6 @@ hr.solid {
   display: flex;
   align-items: center;
 }
-
 .tooltip .achievement-tooltip-text {
   visibility: hidden;
   background-color: #1a1a1a;
@@ -379,7 +371,6 @@ hr.solid {
   margin-left: -50px;
   border-radius: 10px;
 }
-
 .tooltip:hover .achievement-tooltip-text {
   visibility: visible;
 }

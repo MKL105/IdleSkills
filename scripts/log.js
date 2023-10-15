@@ -16,46 +16,46 @@ const logBuffer = [];
 var logSize = 10;
 
 function logDrop(itemId, amount, source) {
-    checkLogSize();
-    const item = getItemById(itemId);
-    var itemText = '<div class="';
-    switch (item.rarity) {
-        case 'common':
-            itemText += 'common">' + item.name + '</div>';
-            break;
-        case 'uncommon':
-            itemText += 'uncommon">' + item.name + '</div>';
-            break;
-        case 'rare':
-            itemText += 'rare">' + item.name + '</div>';
-            break;
-        case 'epic':
-            itemText += 'epic">' + item.name + '</div>';
-            break;
-        case 'legendary':
-            itemText += 'legendary">' + item.name + '</div>';
-            break;
-        default: break;
-    }
+  checkLogSize();
+  const item = getItemById(itemId);
+  var itemText = '<div class="';
+  switch (item.rarity) {
+    case 'common':
+      itemText += 'common">' + item.name + '</div>';
+      break;
+    case 'uncommon':
+      itemText += 'uncommon">' + item.name + '</div>';
+      break;
+    case 'rare':
+      itemText += 'rare">' + item.name + '</div>';
+      break;
+    case 'epic':
+      itemText += 'epic">' + item.name + '</div>';
+      break;
+    case 'legendary':
+      itemText += 'legendary">' + item.name + '</div>';
+      break;
+    default: break;
+  }
 
-    var logText = '<p>' + getCurrentTime() + '&emsp;Got ' + amount + 'x '+ itemText + ' from ' + source + '.</p>';
-    logBuffer.unshift(logText);
-    updateLog();
+  var logText = '<p>' + getCurrentTime() + '&emsp;Got ' + amount + 'x '+ itemText + ' from ' + source + '.</p>';
+  logBuffer.unshift(logText);
+  updateLog();
 }
 
 function logError(error) {
-    checkLogSize();
-    var itemText = "";
-    var logText = "";
-    switch (error) {
-        case 'fullInventory':
-            itemText = '<div class="error">Inventory full!</div>';
-            logText = '<p>' + getCurrentTime() + '&emsp;' + itemText + '</p>';
-            break;
-        default: break;
-    }
-    logBuffer.unshift(logText);
-    updateLog();
+  checkLogSize();
+  var itemText = "";
+  var logText = "";
+  switch (error) {
+    case 'fullInventory':
+      itemText = '<div class="error">Inventory full!</div>';
+      logText = '<p>' + getCurrentTime() + '&emsp;' + itemText + '</p>';
+      break;
+    default: break;
+  }
+  logBuffer.unshift(logText);
+  updateLog();
 }
 
 function logLevelUp(category) {
@@ -81,25 +81,25 @@ function logAchievement(achievement){
 }
 
 function checkLogSize() {
-    if (logBuffer.length >= logSize) {
-      logBuffer.pop();
-    }
+  if (logBuffer.length >= logSize) {
+    logBuffer.pop();
+  }
 }
 
 function emptyLog() {
-    logBuffer.length = 0;
-    updateLog();
+  logBuffer.length = 0;
+  updateLog();
 }
 
 function getCurrentTime() {
-    var date = new Date();
-    var hours = date.getHours();
-    var minutes = date.getMinutes();
-    var seconds = date.getSeconds();
-    if (hours < 10) hours = '0' + hours;
-    if (minutes < 10) minutes = '0' + minutes;
-    if (seconds < 10) seconds = '0' + seconds;
-    return hours + ':' + minutes + ':' + seconds;
+  var date = new Date();
+  var hours = date.getHours();
+  var minutes = date.getMinutes();
+  var seconds = date.getSeconds();
+  if (hours < 10) hours = '0' + hours;
+  if (minutes < 10) minutes = '0' + minutes;
+  if (seconds < 10) seconds = '0' + seconds;
+  return hours + ':' + minutes + ':' + seconds;
 }
 
 

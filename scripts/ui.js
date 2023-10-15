@@ -34,6 +34,14 @@ function setupUI() {
   //Set up skills tabs
   document.getElementById("default-open").click();
 
+  updateSkillButtons();
+  updateUpgradeButtons();
+  updateSkillButtonTooltipTexts()
+  emptyLog();
+  updateSkillTabStatus();
+  updateLevelUi();
+  setupInventory();
+
   for (buttonState of buttonStates) {
     if (buttonState.unlocked == true) {
       //----------------------------------------------------------------
@@ -53,13 +61,6 @@ function setupUI() {
       updateSkillButton(buttonState.id);
     }
   }
-
-  updateUpgradeButtons();
-  updateSkillButtonTooltipTexts()
-  emptyLog();
-  updateSkillTabStatus();
-  updateLevelUi();
-  setupInventory();
 }
 
 //Displays and hides the inventory if the according button is clicked.
@@ -133,6 +134,70 @@ function openSkill(event, skillName) {
         default: break;
     }
     updateSkillTabStatus();
+}
+
+function updateSkillButtons() {
+  const areaDivs = document.getElementsByClassName('skill-area');
+  for (area of areaDivs) {
+    area.innerHTML = "";
+  }
+  const unlockedButtons = buttonStates.filter(button => button.unlocked === true);
+  for (button of unlockedButtons) {
+    var imagePath = "";
+    var altText = "";
+    var parentDiv = "";
+    const imageButton = document.createElement('button');
+    imageButton.className = "skill-button";
+    imageButton.id = "button-" + button.id;
+
+    switch (button.category) {
+      case "mining":
+        if (button.tier == 1) {
+          imagePath = "images/Stone.png";
+          altText = "Image of a stone.";
+          parentDiv = "mining-t1";
+          imageButton.addEventListener("click", startMining, false);
+        }
+        break;
+      case "woodcutting":
+        if (button.tier == 1) {
+          imagePath = "images/Stick.png";
+          altText = "Image of a stick.";
+          parentDiv = "woodcutting-t1";
+          imageButton.addEventListener("click", startWoodcutting, false);
+        }
+        break;
+      case "fishing":
+        if (button.tier == 1) {
+          imagePath = "images/Bait.png";
+          altText = "Image of a worm";
+          parentDiv = "fishing-t1";
+          imageButton.addEventListener("click", startFishing, false);
+        }
+        break;
+      default: break;
+    }
+    const outerDiv = document.createElement('div');
+    outerDiv.className = "skills-button-container tooltip";
+    const tooltip = document.createElement('span');
+    tooltip.className = "tooltip-text-delayed";
+    tooltip.id = "tooltip-text-" + button.id;
+    const image = document.createElement('img');
+    image.src = imagePath;
+    image.alt = altText;
+    const progressBar = document.createElement('div');
+    progressBar.className = "progress-bar";
+    progressBar.id = "progress-bar-" + button.id;
+    const bar = document.createElement('div');
+    bar.className = "bar";
+    progressBar.appendChild(bar);
+    imageButton.appendChild(image);
+    outerDiv.appendChild(tooltip);
+    outerDiv.appendChild(imageButton);
+    outerDiv.appendChild(progressBar);
+    const parentNode = document.getElementById(parentDiv);
+    parentNode.appendChild(outerDiv);
+  }
 }
 
 function updateSkillButton(id) {

@@ -18,7 +18,6 @@ function getItemById(id) {
 
 function addItem(id, amount) {
   var target = {};
-  console.log(id + ": " + amount); 
   target = inventory.find(item => item.id === id);
   if (target.amount == target.maxAmount) {
     logError('fullInventory');
@@ -51,7 +50,6 @@ function removeItem(id, amount) {
     return false;
   }
   target.amount -= amount;
-  console.log("removed item: " + target);
   updateInventoryText(id);
   updateUpgradeTooltips();
   return true;

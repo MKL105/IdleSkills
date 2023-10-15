@@ -12,7 +12,8 @@
  * not, see <https://www.gnu.org/licenses>.
  */
 
-function startMining(buttonId) {
+function startMining(evt) {
+  const buttonId = evt.currentTarget.id.replace("button-", "");
   buttonStates.find(button => button.id === buttonId).active = true;
   mineProgress(buttonId);
 }
