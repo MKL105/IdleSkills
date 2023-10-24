@@ -379,3 +379,8 @@ hr.solid {
 .table-data-amount {
   width: 20%;
 }
+
+/* Lore */
+.lore {
+  font-style: italic;
+}

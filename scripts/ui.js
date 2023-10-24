@@ -141,6 +141,7 @@ function updateSkillButtons() {
   for (area of areaDivs) {
     area.innerHTML = "";
   }
+  addLore()
   const unlockedButtons = buttonStates.filter(button => button.unlocked === true);
   for (button of unlockedButtons) {
     var imagePath = "";
@@ -197,6 +198,31 @@ function updateSkillButtons() {
     outerDiv.appendChild(progressBar);
     const parentNode = document.getElementById(parentDiv);
     parentNode.appendChild(outerDiv);
+  }
+}
+
+function addLore() {
+  const areaDivs = document.getElementsByClassName('skill-area');
+  for (area of areaDivs) {
+    const lore = document.createElement("p");
+    switch (area.id) {
+      case "mining-t1":
+        lore.className = "lore";
+        lore.innerHTML = "The river that is flowing through the landscape does not offer a lot when it comes to mining. Some of the stones might be useful later and who knows, maybe people have thrown some other stuf in there as well.";
+        area.appendChild(lore);
+        break;
+      case "woodcutting-t1":
+        lore.className = "lore";
+        lore.innerHTML = "At the edge of the forest, there are no big trees to be harvested, but you might be able to gather some materials for a campfire, and some of the wood might come in useful later.";
+        area.appendChild(lore);
+        break;
+      case "fishing-t1":
+        lore.className = "lore";
+        lore.innerHTML = "While the meadows are not a good place to catch fish, there is a lot of bait here that will be needed for fishing. There are lots of critters and insects that might make some excellent bait.";
+        area.appendChild(lore);
+        break;
+      default: break;
+    }
   }
 }
 
