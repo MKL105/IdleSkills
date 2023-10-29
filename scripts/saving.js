@@ -64,3 +64,71 @@ function resetData() {
   resetAllData();
   setupUI();
 }
+
+function downloadSavefile() {
+  const link = document.createElement('a');
+  var content = "";
+  content += JSON.stringify(inventory);
+  content += JSON.stringify(miningData);
+  content += JSON.stringify(woodcuttingData);
+  content += JSON.stringify(fishingData);
+  content += JSON.stringify(upgradeData);
+  content += JSON.stringify(buttonStates);
+  content += JSON.stringify(levelData);
+  content += JSON.stringify(achievementData);
+  const file = new Blob([content], {type: 'text/plain'});
+  link.href = URL.createObjectURL(file);
+  link.download = "idleskills_save.isk";
+  link.click();
+  URL.revokeObjectURL(link.href);
+}
+
+function importSavefile() {
+  let input = document.createElement('input');
+  input.type = 'file';
+  input.accept = ".isk";
+  input.onchange = e => { 
+    const file = e.target.files[0];
+    const reader = new FileReader();
+    reader.readAsText(file, 'UTF-8');
+    reader.onload = readerEvent => {
+      var content = readerEvent.target.result;
+      readImportData(content);
+    }
+  }
+  input.click();
+}
+
+function readImportData(content) {
+  var beginPos = 0;
+  var splitPos = content.indexOf('][');
+  inventory = JSON.parse(content.substring(beginPos, splitPos + 1));
+  content = content.slice(splitPos + 1);
+  splitPos = content.indexOf('][');
+  miningData = JSON.parse(content.substring(beginPos, splitPos + 1));
+  content = content.slice(splitPos + 1);
+  splitPos = content.indexOf('][');
+  woodcuttingData = JSON.parse(content.substring(beginPos, splitPos + 1));
+  content = content.slice(splitPos + 1);
+  splitPos = content.indexOf('][');
+  fishingData = JSON.parse(content.substring(beginPos, splitPos + 1));
+  content = content.slice(splitPos + 1);
+  splitPos = content.indexOf('][');
+  upgradeData = JSON.parse(content.substring(beginPos, splitPos + 1));
+  content = content.slice(splitPos + 1);
+  splitPos = content.indexOf('][');
+  buttonStates = JSON.parse(content.substring(beginPos, splitPos + 1));
+  content = content.slice(splitPos + 1);
+  splitPos = content.indexOf('][');
+  levelData = JSON.parse(content.substring(beginPos, splitPos + 1));
+  content = content.slice(splitPos + 1);
+  achievementData = JSON.parse(content);
+  console.log(inventory);
+  console.log(miningData);
+  console.log(woodcuttingData);
+  console.log(fishingData);
+  console.log(upgradeData);
+  console.log(buttonStates);
+  console.log(levelData);
+  console.log(achievementData);
+}
