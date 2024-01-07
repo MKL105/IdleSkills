@@ -15,6 +15,8 @@
 :root {
   --main-text-color: #ddd;
   --main-bg-color: #121212;
+  --main-bg-color-b1: #181818;
+  --main-bg-color-active: #262626;
   --content-height: 87vh;
 }
 
@@ -73,4 +75,42 @@ hr.solid {
 
 .right-half {
   flex-grow: 1;
+}
+
+.stats-area {
+  height: 60vh;
+  margin-left: 20px;
+}
+
+.log-area {
+  margin-left: 20px;
+}
+
+.area-selection-tab {
+  background-color: var(--main-bg-color-b1);
+}
+
+.area-selection-tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 16px;
+  color: var(--main-text-color);
+  width: 25%
+}
+
+.area-selection-tab button:hover {
+  background-color: var(--main-bg-color-active);
+}
+
+.area-selection-tab button.active {
+  background-color: var(--main-bg-color-active);
+}
+
+.area-selection-content {
+  display: none;
 }

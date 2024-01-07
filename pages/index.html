@@ -33,14 +33,31 @@
   </header>
   <main>
     <section class="left-half">
-
+      <div class="area-selection-tab">
+        <button class="area-selection-button" id="default-open" onclick="openArea(event, 'skills')">Skills</button>
+        <button class="area-selection-button" onclick="openArea(event, 'upgrades')">Upgrades</button>
+        <button class="area-selection-button" onclick="openArea(event, 'inventory')">Inventory</button>
+        <button class="area-selection-button" onclick="openArea(event, 'quests')">Quests</button>
+      </div>
+      <div class="area-selection-content" id="skills-area">Skills</div>
+      <div class="area-selection-content" id="upgrades-area">Upgrades</div>
+      <div class="area-selection-content" id="inventory-area">Inventory</div>
+      <div class="area-selection-content" id="quests-area">Quests</div>
     </section>
     <div class="vl-solid"></div>
     <section class="right-half">
-
+      <div class="stats-area">
+        <h2>Stats</h2>
+      </div>
+      <hr class="solid">
+      <div class="log-area">
+        <h2>Log</h2>
+      </div>
     </section>
   </main>
   <footer>
   </footer>
+  <script src="../scripts/ui.js"></script>
+  <script src="../scripts/main.js"></script>
 </body>
 </html>
