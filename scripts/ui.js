@@ -13,7 +13,7 @@
  */
 
 function startUi() {
-  document.getElementById("default-open").click();
+  document.getElementById("default-open-area").click();
 }
 
 function openArea(event, areaName) {
@@ -28,5 +28,24 @@ function openArea(event, areaName) {
   }
 
   document.getElementById(areaName + "-area").style.display = "block";
+  event.currentTarget.className += " active";
+
+  if (areaName === "skills") {
+    document.getElementById("default-open-skill").click();
+  }
+}
+
+function openSkill(event, skillName) {
+  var content = document.getElementsByClassName("skill-selection-content");
+  for (var i = 0; i < content.length; i++) {
+    content[i].style.display = "none";
+  }
+
+  var buttons = document.getElementsByClassName("skill-selection-button");
+  for (var i = 0; i < buttons.length; i++) {
+    buttons[i].className = buttons[i].className.replace(" active", "");
+  }
+
+  document.getElementById(skillName + "-area").style.display = "block";
   event.currentTarget.className += " active";
 }

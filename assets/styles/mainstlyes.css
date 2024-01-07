@@ -114,3 +114,32 @@ hr.solid {
 .area-selection-content {
   display: none;
 }
+
+.skill-selection-tab {
+  background-color: var(--main-bg-color-b1);
+}
+
+.skill-selection-tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 16px;
+  color: var(--main-text-color);
+  width: 33.3%
+}
+
+.skill-selection-tab button:hover {
+  background-color: var(--main-bg-color-active);
+}
+
+.skill-selection-tab button.active {
+  background-color: var(--main-bg-color-active);
+}
+
+.skill-selection-content {
+  display: none;
+}

@@ -34,12 +34,21 @@
   <main>
     <section class="left-half">
       <div class="area-selection-tab">
-        <button class="area-selection-button" id="default-open" onclick="openArea(event, 'skills')">Skills</button>
+        <button class="area-selection-button" id="default-open-area" onclick="openArea(event, 'skills')">Skills</button>
         <button class="area-selection-button" onclick="openArea(event, 'upgrades')">Upgrades</button>
         <button class="area-selection-button" onclick="openArea(event, 'inventory')">Inventory</button>
         <button class="area-selection-button" onclick="openArea(event, 'quests')">Quests</button>
       </div>
-      <div class="area-selection-content" id="skills-area">Skills</div>
+      <div class="area-selection-content" id="skills-area">
+        <div class="skill-selection-tab">
+          <button class="skill-selection-button" id="default-open-skill" onclick="openSkill(event, 'mining')">Mining</button>
+          <button class="skill-selection-button" onclick="openSkill(event, 'woodcutting')">Woodcutting</button>
+          <button class="skill-selection-button" onclick="openSkill(event, 'fishing')">Fishing</button>
+        </div>
+        <div class="skill-selection-content" id="mining-area">Mining</div>
+        <div class="skill-selection-content" id="woodcutting-area">Woodcutting</div>
+        <div class="skill-selection-content" id="fishing-area">Fishing</div>
+      </div>
       <div class="area-selection-content" id="upgrades-area">Upgrades</div>
       <div class="area-selection-content" id="inventory-area">Inventory</div>
       <div class="area-selection-content" id="quests-area">Quests</div>
