@@ -18,6 +18,11 @@
   --main-bg-color-b1: #181818;
   --main-bg-color-active: #262626;
   --content-height: 87vh;
+  --color-item-common: #9c9c9c;
+  --color-item-uncommon: #2d08c2;
+  --color-item-rare: #0daa1a;
+  --color-item-epic: #5f149c;
+  --color-item-legendary: #dc7e0b;
 }
 
 .test {
@@ -54,6 +59,7 @@ hr.solid {
 .vl-solid {
   border-left: 3px solid var(--main-text-color);
   height: var(--content-height);
+  float: left;
 }
 
 .centered-text-container {
@@ -142,4 +148,24 @@ hr.solid {
 
 .skill-selection-content {
   display: none;
+}
+
+.skill-tier-area {
+  float: left;
+  width: 19.5%;
+}
+
+.skill-button-area {
+  aspect-ratio: 1 / 1;
+  text-align: center;
+  padding-top: 10%;
+}
+
+.progress-bar {
+  background-color: var(--main-bg-color-active);
+}
+
+.skill-button {
+  aspect-ratio: 1 / 1;
+  width: 60%;
 }
