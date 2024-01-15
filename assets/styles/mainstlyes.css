@@ -161,11 +161,23 @@ hr.solid {
   padding-top: 10%;
 }
 
-.progress-bar {
+.progress-bar-outer{
+  background-color: var(--main-bg-color-b1);
+  height: 20%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.progress-bar-inner {
   background-color: var(--main-bg-color-active);
+  width: 20%;
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .skill-button {
   aspect-ratio: 1 / 1;
   width: 60%;
+  margin-bottom: 5%;
 }

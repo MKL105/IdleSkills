@@ -12,8 +12,14 @@
   not, see <https://www.gnu.org/licenses>.
  */
 
-window.onload = setupGame();
-
-function setupGame() {
-  startUi();
-}
+var skillData = [
+  {
+    id: "miningDataT1",
+    skill: "mining",
+    tier: 1,
+    baseTime: 10.0,
+    drops: [
+      
+    ]
+  }
+]

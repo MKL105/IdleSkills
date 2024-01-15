@@ -1,4 +1,4 @@
-/* Copyright (C) [2023] [Markus Luethje <mklgamesapps@gmail.com>]
+/* Copyright (C) [2024] [Markus Luethje <mklgamesapps@gmail.com>]
   
   This program is free software; you can redistribute it and/or modify it under the terms of the 
   GNU General Public License as published by the Free Software Foundation; either version 3 of the
@@ -11,6 +11,8 @@
   You should have received a copy of the GNU General Public License along with this program; if
   not, see <https://www.gnu.org/licenses>.
  */
+
+const progressBarFrameRate = 20; // Defines the interval in milliseconds between progress bar updates.
 
 function startUi() {
   document.getElementById("default-open-area").click();
@@ -48,4 +50,25 @@ function openSkill(event, skillName) {
 
   document.getElementById(skillName + "-area").style.display = "block";
   event.currentTarget.className += " active";
+}
+
+/**
+ * Updated the progress bar of a skill.
+ * 
+ * @param {*} id The id of the progress bar to be updated. Has to be of class "progress-bar-inner".
+ * @param {*} totalTime The time the skill needs in milliseconds.
+ * @param {*} timePassed The time that has already passed in milliseconds.
+ */
+function updateProgressBar(id, totalTime, timePassed) {
+  const progressBar = document.getElementById(id);
+  if (timePassed >= totalTime) {
+    //TODO: Finish skill
+  }
+  else {
+    const percentage = (timePassed / totalTime) * 100;
+    progressBar.style.width = percentage + "%";
+    setTimeout(function() {
+      updateProgressBar(id, totalTime, timePassed + progressBarFrameRate);
+    }, progressBarFrameRate)
+  }
 }

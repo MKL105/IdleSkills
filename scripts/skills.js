@@ -12,8 +12,7 @@
   not, see <https://www.gnu.org/licenses>.
  */
 
-window.onload = setupGame();
+function startSkill(category, tier) {
 
-function setupGame() {
-  startUi();
 }
+
