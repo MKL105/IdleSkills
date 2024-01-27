@@ -23,3 +23,7 @@ var skillData = [
     ]
   }
 ]
+
+var inventory = [
+  
+]
