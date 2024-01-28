@@ -1,29 +1,35 @@
 /* Copyright (C) [2024] [Markus Luethje <mklgamesapps@gmail.com>]
-  
-  This program is free software; you can redistribute it and/or modify it under the terms of the 
-  GNU General Public License as published by the Free Software Foundation; either version 3 of the
-  License, or (at your option) any later version.
-  
-  This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; 
-  without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. 
-  See the GNU General Public License for more details.
-  
-  You should have received a copy of the GNU General Public License along with this program; if
-  not, see <https://www.gnu.org/licenses>.
+
+  This program is free software; you can redistribute it and/or modify it under
+  the terms of the GNU General Public License as published by the Free Software
+  Foundation; either version 3 of the License, or (at your option) any later
+  version.
+
+  This program is distributed in the hope that it will be useful, but WITHOUT
+  ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+  FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License along with
+  this program; if not, see <https://www.gnu.org/licenses>.
  */
 
-var skillData = [
+const skillData = [
   {
-    id: "miningDataT1",
-    skill: "mining",
+    id: 'miningDataT1',
+    skill: 'mining',
     tier: 1,
     baseTime: 10.0,
     drops: [
-      
-    ]
-  }
-]
 
-var inventory = [
-  
-]
+    ],
+  },
+];
+
+const inventory = [
+  {
+    id: 'stone',
+    name: 'Stone',
+    amount: 0,
+    maxAmount: 10,
+  },
+];
