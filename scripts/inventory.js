@@ -65,3 +65,13 @@ function removeItem(id, amount) {
     return false;
   }
 }
+
+/**
+ * Returns a list of objects with all items in the inventory that have an amount
+ *  of at least 1.
+ *
+ * @return {Array} List of objects with all items with amount > 1.
+ */
+function getAllOwnedItems() {
+  return inventory.filter((item) => item.amount > 0);
+}

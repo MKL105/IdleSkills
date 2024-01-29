@@ -43,8 +43,13 @@ function openArea(event, areaName) {
   document.getElementById(areaName + '-area').style.display = 'block';
   event.currentTarget.className += ' active';
 
-  if (areaName === 'skills') {
-    document.getElementById('default-open-skill').click();
+  switch (areaName) {
+    case 'skills':
+      document.getElementById('default-open-skill').click();
+      break;
+    case 'inventory':
+      createInventoryGridUI();
+      break;
   }
 }
 
@@ -87,5 +92,32 @@ function updateProgressBar(id, totalTime, timePassed) {
     setTimeout(function() {
       updateProgressBar(id, totalTime, timePassed + progressBarFrameRate);
     }, progressBarFrameRate);
+  }
+}
+
+/**
+ * Creates the grid UI for the inventory, taking into account only the items
+ * that have an amount of at least 1.
+ */
+function createInventoryGridUI() {
+  const items = getAllOwnedItems();
+  const parent = document.getElementsByClassName('inventory-grid').item(0);
+  const imageFolderPath = '../assets/images/';
+
+  parent.innerHTML = '';
+
+  for (item of items) {
+    const container = document.createElement('div');
+    container.className = 'inventory-grid-item';
+    const amountText = document.createElement('div');
+    amountText.className = 'inventory-item-amount';
+    const text = item.amount + '/' + item.maxAmount;
+    amountText.innerHTML = text;
+    const image = document.createElement('img');
+    image.src = imageFolderPath + item.imageName;
+
+    container.appendChild(amountText);
+    container.appendChild(image);
+    parent.appendChild(container);
   }
 }

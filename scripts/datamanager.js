@@ -29,6 +29,7 @@ const inventory = [
   {
     id: 'stone',
     name: 'Stone',
+    imageName: 'Stone.png',
     amount: 0,
     maxAmount: 10,
   },
