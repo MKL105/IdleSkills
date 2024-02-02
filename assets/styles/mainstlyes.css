@@ -208,3 +208,41 @@ hr.solid {
   width: 57px;
   aspect-ratio: 1 / 1;
 }
+
+.inventory-filter-area {
+  padding-top: 60px;
+  
+}
+
+.inventory-filter-area * {
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.filter-button {
+  background-color: var(--main-bg-color-active);
+  color: var(--main-text-color);
+  outline: none;
+  border: none;
+  margin: 0 5px;
+  width: 10%;
+  height: 30px;
+}
+
+.filter-button-content {
+  display: flex;
+  justify-content: space-between;
+  height: inherit;
+}
+
+.filter-clear-button {
+  background-color: var(--main-bg-color-active);
+  color: var(--main-text-color);
+  outline: none;
+  border: none;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 14px;
+  margin-left: 8%;
+}
