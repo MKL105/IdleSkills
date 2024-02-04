@@ -26,8 +26,8 @@ function startUi() {
 /**
  * Switches to the according content if a area tab is clicked.
  *
- * @param {*} event Event passed by the click.
- * @param {*} areaName The area to be opened.
+ * @param {Event} event Event passed by the click.
+ * @param {string} areaName The area to be opened.
  */
 function openArea(event, areaName) {
   const content = document.getElementsByClassName('area-selection-content');
@@ -56,8 +56,8 @@ function openArea(event, areaName) {
 /**
  * Switches to the according content if a area tab is clicked.
  *
- * @param {*} event Event passed by the click.
- * @param {*} skillName The skill to be opened.
+ * @param {Event} event Event passed by the click.
+ * @param {string} skillName The skill to be opened.
  */
 function openSkill(event, skillName) {
   const content = document.getElementsByClassName('skill-selection-content');
@@ -75,6 +75,7 @@ function openSkill(event, skillName) {
 }
 
 /**
+ * TODO: Update doc to include types
  * Updated the progress bar of a skill.
  *
  * @param {*} id The id of the progress bar to be updated. Has to be of class
@@ -119,5 +120,28 @@ function createInventoryGridUI() {
     container.appendChild(amountText);
     container.appendChild(image);
     parent.appendChild(container);
+  }
+}
+
+/**
+ * Opens and closes the dropdown for a given filter.
+ *
+ * @param {Event} evt The event object passed by clicking on the button.
+ * @param {string} filterType The filter dropdown to be opened.
+ */
+function toggleFilterDropdown(evt, filterType) {
+  switch (filterType) {
+    case 'area':
+      console.log('Toggle area Dropdown');
+      break;
+    case 'tier':
+      console.log('Toggle tier Dropdown');
+      break;
+    case 'skill':
+      console.log('Toggle skill Dropdown');
+      break;
+    case 'rarity':
+      console.log('Toggle rarity Dropdown');
+      break;
   }
 }

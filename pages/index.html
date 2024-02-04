@@ -106,30 +106,30 @@
       <div class="area-selection-content" id="inventory-area">
         <div class="inventory-filter-area centered-text-container">
           <div class="centered-text-content">Filter:</div>
-          <button class="filter-button">
-            <div class="filter-button-content">
-              <p>Area</p>
-              <p>&#x2BC6;</p>
-            </div>
-          </button>
-          <button class="filter-button">
-            <div class="filter-button-content">
-              <p>Tier</p>
-              <p>&#x2BC6;</p>
-            </div>
-          </button>
-          <button class="filter-button">
-            <div class="filter-button-content">
-              <p>Skill</p>
-              <p>&#x2BC6;</p>
-            </div>
-          </button>
-          <button class="filter-button">
-            <div class="filter-button-content">
-              <p>Rarity</p>
-              <p>&#x2BC6;</p>
-            </div>
-          </button>
+          <div class="centered-text-content no-margin">
+            <button class="filter-button"  onclick="toggleFilterDropdown(event, 'area')">
+              <p class="left-aligned">Area</p>
+              <p class="right-aligned">&#x2BC6;</p>
+            </button>
+          </div>
+          <div class="centered-text-content no-margin">
+            <button class="filter-button" onclick="toggleFilterDropdown(event, 'tier')">
+              <p class="left-aligned">Tier</p>
+              <p class="right-aligned">&#x2BC6;</p>
+            </button>
+          </div>
+          <div class="centered-text-content no-margin">
+            <button class="filter-button" onclick="toggleFilterDropdown(event, 'skill')">
+              <p class="left-aligned">Skill</p>
+              <p class="right-aligned">&#x2BC6;</p>
+            </button>
+          </div>
+          <div class="centered-text-content no-margin">
+            <button class="filter-button" onclick="toggleFilterDropdown(event, 'rarity')">
+              <p class="left-aligned">Rarity</p>
+              <p class="right-aligned">&#x2BC6;</p>
+            </button>
+          </div>
           <button class="filter-clear-button">Clear all</button>
         </div>
         <div class="inventory-grid">

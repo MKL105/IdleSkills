@@ -217,6 +217,7 @@ hr.solid {
 .inventory-filter-area * {
   font-size: 16px;
   font-family: Arial, Helvetica, sans-serif;
+  vertical-align: middle;
 }
 
 .filter-button {
@@ -224,15 +225,9 @@ hr.solid {
   color: var(--main-text-color);
   outline: none;
   border: none;
-  margin: 0 5px;
-  width: 10%;
+  margin: 0px;
   height: 30px;
-}
-
-.filter-button-content {
-  display: flex;
-  justify-content: space-between;
-  height: inherit;
+  width: 100%
 }
 
 .filter-clear-button {
@@ -240,9 +235,25 @@ hr.solid {
   color: var(--main-text-color);
   outline: none;
   border: none;
-  margin: 5px;
+  margin-top: 0px;
+  margin-bottom: 0px;
   padding: 5px;
   border-radius: 5px;
   font-size: 14px;
   margin-left: 8%;
+}
+
+.left-aligned {
+  float: left;
+  margin-top: 5px;
+}
+
+.right-aligned {
+  float: right;
+  margin-top: 0;
+}
+
+.no-margin {
+  margin: 0;
+  width: 12%;
 }
